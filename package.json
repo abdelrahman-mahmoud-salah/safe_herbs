@@ -1,0 +1,16 @@
+{
+  "name": "safe-herbs-portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Safe Herbs & Spices — Enterprise-grade portfolio",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11",
+    "handlebars": "^4.7.8",
+    "vite-plugin-handlebars": "^2.0.0"
+  }
+}

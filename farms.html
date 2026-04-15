@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Farms — Safe Herbs &amp; Spices</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/farms.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html"         onclick="closeMobile()">Home</a>
+  <a href="index.html#about"   onclick="closeMobile()">About</a>
+  <a href="index.html#products"onclick="closeMobile()">Products</a>
+  <a href="farms.html"         onclick="closeMobile()">Farms</a>
+  <a href="certificates.html"  onclick="closeMobile()">Certificates</a>
+  <a href="index.html#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">SAFE HERBS <span>&amp; SPICES</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="farms.html" class="active">Farms</a></li>
+    <li><a href="certificates.html">Certificates</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-cta-link">Get In Touch</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Our Farms</span>
+    </div>
+    <span class="page-eyebrow">✦ 1060+ Hectares Across Egypt</span>
+    <h1 class="page-title">Our<br><em>Farms</em></h1>
+  </div>
+</section>
+
+<!-- OVERVIEW BAND -->
+<div class="overview-band">
+  <div class="overview-inner">
+    <p class="overview-tag reveal">Our Land</p>
+    <p class="overview-text reveal">
+      Our vast organic farms span Egypt's most fertile governorates —
+      from the ancient Nile floodplains of <strong>Fayoum and Beni Suef</strong>,
+      to the Upper Egyptian fields of <strong>Al Minia, Assuit and Luxor</strong>,
+      and the newly reclaimed desert lands of <strong>Al Wahat</strong>.
+      Each farm is cultivated with a deep respect for the soil, the seasons,
+      and the communities who work the land — combining traditional Egyptian
+      flood irrigation with modern organic farming methods.
+    </p>
+  </div>
+</div>
+
+<!-- STATS ROW -->
+<div class="stats-row">
+  <div class="stats-inner">
+    <div class="stat-item"                       ><div class="stat-num">1060<span>+</span></div><div class="stat-lbl">Total Hectares</div></div>
+    <div class="stat-item" style="transition-delay:.06s"><div class="stat-num">6<span></span></div><div class="stat-lbl">Farm Regions</div></div>
+    <div class="stat-item" style="transition-delay:.12s"><div class="stat-num">12<span>+</span></div><div class="stat-lbl">Certified Farms</div></div>
+    <div class="stat-item" style="transition-delay:.18s"><div class="stat-num">2005<span></span></div><div class="stat-lbl">First Organic Year</div></div>
+    <div class="stat-item" style="transition-delay:.24s"><div class="stat-num">20<span>+</span></div><div class="stat-lbl">Crops Grown</div></div>
+  </div>
+</div>
+
+<!-- MAP SECTION -->
+<div class="map-section">
+  <div class="map-header">
+    <p class="section-tag reveal">Where We Grow</p>
+    <h2 class="section-heading reveal">Farm <em>Locations</em></h2>
+  </div>
+  <div class="map-layout">
+    <div class="map-canvas-wrap reveal-left">
+      <canvas id="map-canvas"></canvas>
+    </div>
+    <div class="map-legend reveal-right">
+      <div class="legend-item"><div class="legend-dot-wrap"><div class="legend-dot dot-gold"></div></div><div class="legend-info"><div class="legend-name">Fayoum</div><div class="legend-region">Northern Egypt</div><div class="legend-tags"><span class="tag">195 ha</span><span class="tag">Organic since 2005</span><span class="tag">NOP</span><span class="tag">Fairtrade</span></div></div></div>
+      <div class="legend-item"><div class="legend-dot-wrap"><div class="legend-dot dot-sage"></div></div><div class="legend-info"><div class="legend-name">Beni Suef</div><div class="legend-region">Central Egypt</div><div class="legend-tags"><span class="tag">213 ha</span><span class="tag">Organic since 2008</span><span class="tag">NOP</span><span class="tag">Fairtrade</span></div></div></div>
+      <div class="legend-item"><div class="legend-dot-wrap"><div class="legend-dot dot-sage"></div></div><div class="legend-info"><div class="legend-name">Al Minia</div><div class="legend-region">Upper Egypt</div><div class="legend-tags"><span class="tag">100+ ha</span><span class="tag">Organic since 2020</span><span class="tag">NOP</span></div></div></div>
+      <div class="legend-item"><div class="legend-dot-wrap"><div class="legend-dot dot-earth"></div></div><div class="legend-info"><div class="legend-name">Assuit</div><div class="legend-region">Upper Egypt</div><div class="legend-tags"><span class="tag">84 ha</span><span class="tag">Organic since 2010</span></div></div></div>
+      <div class="legend-item"><div class="legend-dot-wrap"><div class="legend-dot dot-earth"></div></div><div class="legend-info"><div class="legend-name">Luxor</div><div class="legend-region">Upper Egypt</div><div class="legend-tags"><span class="tag">60 ha</span><span class="tag">Organic since 2020</span><span class="tag">NOP</span></div></div></div>
+      <div class="legend-item"><div class="legend-dot-wrap"><div class="legend-dot dot-green"></div></div><div class="legend-info"><div class="legend-name">Al Wahat</div><div class="legend-region">Western Desert, Giza</div><div class="legend-tags"><span class="tag">50+ ha</span><span class="tag">Organic since 2023</span><span class="tag">Virgin Soil</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FARM BLOCKS -->
+<div class="farms-section">
+
+  <!-- FAYOUM -->
+  <div class="farm-block layout-left reveal">
+    <div class="farm-visual">
+      <div class="farm-canvas-wrap">
+         <img class="farm-img" src="image/fay.webp" alt="fayoum farms">
+        <div class="farm-num-badge">01</div>
+        <div class="farm-area-badge"><div class="area-num">195</div><div class="area-lbl">Hectares</div></div>
+      </div>
+    </div>
+    <div class="farm-info">
+      <p class="farm-tag">Established 2005</p>
+      <h2 class="farm-name">Fayoum Farms</h2>
+      <p class="farm-location">Fayoum Governorate · Northern Egypt</p>
+      <div class="organic-badge">Organic Since 2005</div>
+      <p class="farm-desc">Fayoum farms were the foundation of everything we have built. Some land came through inheritance, the rest carefully acquired. Now covering 195 hectares across 4 farms, all run under our direct supervision with traditional flood irrigation from the Fayoum Depression's natural waterways.</p>
+      <div class="farm-meta">
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></div>
+          <span class="meta-label">Irrigation</span>
+          <span class="meta-value">Flood irrigation — traditional Nile-fed canals</span>
+        </div>
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21h2.29c.3-.78 1.25-2 2.89-3 2.54-1.49 4.39-1.99 6-2.5V8z"/></svg></div>
+          <span class="meta-label">Main Crops</span>
+          <span class="meta-value" style="flex:1">
+            <div class="crops-list">
+              <span class="crop-chip">Chamomile</span><span class="crop-chip">Calendula</span><span class="crop-chip">Caraway</span><span class="crop-chip">Peppermint</span><span class="crop-chip">Lemon Grass</span><span class="crop-chip">Fennel</span><span class="crop-chip">Parsley</span><span class="crop-chip">Sesame</span><span class="crop-chip">Coriander</span>
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="farm-certs">
+        <span class="cert-chip">Global GAP</span>
+        <span class="cert-chip">NOP Certified</span>
+        <span class="cert-chip">Fairtrade</span>
+        <span class="cert-chip">JAS</span>
+        <span class="cert-chip">Rainforest &amp; UEBT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BENI SUEF -->
+  <div class="farm-block layout-right reveal">
+    <div class="farm-visual">
+      <div class="farm-canvas-wrap">
+            <img class="farm-img" src="image/bani_3.webp" alt="fayoum farms">
+        <div class="farm-num-badge">02</div>
+        <div class="farm-area-badge"><div class="area-num">213</div><div class="area-lbl">Hectares</div></div>
+      </div>
+    </div>
+    <div class="farm-info">
+      <p class="farm-tag">Established 2008</p>
+      <h2 class="farm-name">Beni Suef Farms</h2>
+      <p class="farm-location">Somsta &amp; Ahnesia · Beni Suef Governorate</p>
+      <div class="organic-badge">Organic Since 2008</div>
+      <p class="farm-desc">213 hectares distributed across 9 farms in Beni Suef, all managed under our direct supervision. The farms sit on traditional fertile Nile floodplain land, irrigated directly from the river — yielding exceptional productivity with no risk of cross-contamination.</p>
+      <div class="farm-meta">
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></div>
+          <span class="meta-label">Irrigation</span>
+          <span class="meta-value">Flood irrigation — direct from the Nile</span>
+        </div>
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21h2.29c.3-.78 1.25-2 2.89-3 2.54-1.49 4.39-1.99 6-2.5V8z"/></svg></div>
+          <span class="meta-label">Main Crops</span>
+          <span class="meta-value" style="flex:1">
+            <div class="crops-list">
+              <span class="crop-chip">Chamomile</span><span class="crop-chip">Spearmint</span><span class="crop-chip">Peppermint</span><span class="crop-chip">Fennel</span><span class="crop-chip">Parsley</span><span class="crop-chip">Sesame</span><span class="crop-chip">Coriander</span>
+            </div>
+          </span>
+        </div>
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+          <span class="meta-label">Farms</span>
+          <span class="meta-value">9 individual farms, centrally supervised</span>
+        </div>
+      </div>
+      <div class="farm-certs">
+        <span class="cert-chip">NOP Certified</span>
+        <span class="cert-chip">Fairtrade</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- AL MINIA -->
+  <div class="farm-block layout-left reveal">
+    <div class="farm-visual">
+      <div class="farm-canvas-wrap">
+          <img class="farm-img" src="image/menya_2.webp" alt="fayoum farms">
+        <div class="farm-num-badge">03</div>
+        <div class="farm-area-badge"><div class="area-num">100<span style="font-size:18px">+</span></div><div class="area-lbl">Hectares</div></div>
+      </div>
+    </div>
+    <div class="farm-info">
+      <p class="farm-tag">Established 2018</p>
+      <h2 class="farm-name">Menya Farm</h2>
+      <p class="farm-location">Al Minia Governorate · Upper Egypt</p>
+      <div class="organic-badge">Organic Since 2020</div>
+      <p class="farm-desc">Reclaimed desert virgin area established in 2018. We manage and cultivate over 100 hectares of medicinal herbs &amp; spices using modern farming methods, with mechanical harvesting. The area has great potential to reach 200 hectares of botanical products within a short period.</p>
+      <div class="farm-meta">
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></div>
+          <span class="meta-label">Irrigation</span>
+          <span class="meta-value">Modern flood irrigation on reclaimed land</span>
+        </div>
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21h2.29c.3-.78 1.25-2 2.89-3 2.54-1.49 4.39-1.99 6-2.5V8z"/></svg></div>
+          <span class="meta-label">Main Crops</span>
+          <span class="meta-value" style="flex:1">
+            <div class="crops-list">
+              <span class="crop-chip">Marjoram</span><span class="crop-chip">Chamomile</span><span class="crop-chip">Fennel</span><span class="crop-chip">Hibiscus</span><span class="crop-chip">Basil</span><span class="crop-chip">Sesame</span><span class="crop-chip">Thyme</span>
+            </div>
+          </span>
+        </div>
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+          <span class="meta-label">Harvesting</span>
+          <span class="meta-value">Mechanical harvesting methods</span>
+        </div>
+      </div>
+      <div class="farm-certs">
+        <span class="cert-chip">NOP Certified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ASSUIT -->
+  <div class="farm-block layout-right reveal">
+    <div class="farm-visual">
+      <div class="farm-canvas-wrap">
+            <img class="farm-img" src="image/f4.webp" alt="fayoum farms">
+        <div class="farm-num-badge">04</div>
+        <div class="farm-area-badge"><div class="area-num">84</div><div class="area-lbl">Hectares</div></div>
+      </div>
+    </div>
+    <div class="farm-info">
+      <p class="farm-tag">Established 2010</p>
+      <h2 class="farm-name">Assuit Farm</h2>
+      <p class="farm-location">Assuit Governorate · Upper Egypt</p>
+      <div class="organic-badge">Organic Since 2010</div>
+      <p class="farm-desc">84 hectares of traditional fertile Nile floodplain land, all managed under our supervision. The direct Nile flood irrigation provides exceptional soil nutrition and yields premium quality herbs and seed crops in one of Egypt's most productive agricultural regions.</p>
+      <div class="farm-meta">
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></div>
+          <span class="meta-label">Irrigation</span>
+          <span class="meta-value">Flood irrigation — direct from the Nile</span>
+        </div>
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21h2.29c.3-.78 1.25-2 2.89-3 2.54-1.49 4.39-1.99 6-2.5V8z"/></svg></div>
+          <span class="meta-label">Main Crops</span>
+          <span class="meta-value" style="flex:1">
+            <div class="crops-list">
+              <span class="crop-chip">Nigella</span><span class="crop-chip">Fennel</span><span class="crop-chip">Coriander</span><span class="crop-chip">Anise</span>
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="farm-certs">
+        <span class="cert-chip">Organic Certified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LUXOR -->
+  <div class="farm-block layout-left reveal">
+    <div class="farm-visual">
+      <div class="farm-canvas-wrap">
+        <canvas id="farm-canvas-5"></canvas>
+        <div class="farm-num-badge">05</div>
+        <div class="farm-area-badge"><div class="area-num">60</div><div class="area-lbl">Hectares</div></div>
+      </div>
+    </div>
+    <div class="farm-info">
+      <p class="farm-tag">Established 2020</p>
+      <h2 class="farm-name">Luxor Farm</h2>
+      <p class="farm-location">Athna · Luxor Governorate · Upper Egypt</p>
+      <div class="organic-badge">Organic Since 2020</div>
+      <p class="farm-desc">Our farm in Luxor is located in Athna — a reclaimed desert area where we used flood irrigation to bring approximately 60 hectares of new land into production. The warm Upper Egyptian climate is ideal for growing Hibiscus, producing exceptional colour and flavour.</p>
+      <div class="farm-meta">
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></div>
+          <span class="meta-label">Irrigation</span>
+          <span class="meta-value">Flood irrigation on reclaimed desert land</span>
+        </div>
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21h2.29c.3-.78 1.25-2 2.89-3 2.54-1.49 4.39-1.99 6-2.5V8z"/></svg></div>
+          <span class="meta-label">Main Crops</span>
+          <span class="meta-value" style="flex:1">
+            <div class="crops-list">
+              <span class="crop-chip">Hibiscus</span>
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="farm-certs">
+        <span class="cert-chip">NOP Certified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- AL WAHAT -->
+  <div class="farm-block layout-right reveal">
+    <div class="farm-visual">
+      <div class="farm-canvas-wrap">
+           <img class="farm-img" src="image/wahat.webp" alt="fayoum farms">
+        <div class="farm-num-badge">06</div>
+        <div class="farm-area-badge"><div class="area-num">50<span style="font-size:18px">+</span></div><div class="area-lbl">Hectares</div></div>
+      </div>
+    </div>
+    <div class="farm-info">
+      <p class="farm-tag">Established 2023</p>
+      <h2 class="farm-name">Al Wahat Farm</h2>
+      <p class="farm-location">Wadi El Natrun · Wahat Al Bahria · Giza</p>
+      <div class="organic-badge">Organic Since 2023 · Virgin Soil</div>
+      <p class="farm-desc">Our newest farm in Wahat Al Bahria, Giza is a newly reclaimed desert on pristine virgin soil. Using modern drip irrigation, we cultivate approximately 50 hectares of diverse crops. The area has exceptional potential to reach 420 hectares of botanical products within a short period — our most ambitious expansion to date.</p>
+      <div class="farm-meta">
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></div>
+          <span class="meta-label">Irrigation</span>
+          <span class="meta-value">Modern drip irrigation system</span>
+        </div>
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21h2.29c.3-.78 1.25-2 2.89-3 2.54-1.49 4.39-1.99 6-2.5V8z"/></svg></div>
+          <span class="meta-label">Main Crops</span>
+          <span class="meta-value" style="flex:1">
+            <div class="crops-list">
+              <span class="crop-chip">Nigella</span><span class="crop-chip">Chamomile</span><span class="crop-chip">Sesame</span><span class="crop-chip">Fennel</span><span class="crop-chip">Hibiscus</span>
+            </div>
+          </span>
+        </div>
+        <div class="farm-meta-row">
+          <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+          <span class="meta-label">Potential</span>
+          <span class="meta-value">Expansion to 420 ha planned</span>
+        </div>
+      </div>
+      <div class="farm-certs">
+        <span class="cert-chip">Organic · Virgin Soil</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SOIL SECTION -->
+<section class="soil-section">
+  <div class="soil-inner">
+    <div class="soil-text">
+      <p class="soil-tag reveal">What Makes Us Different</p>
+      <h2 class="soil-heading reveal">Nile Soil &amp;<br><em>Ancient Wisdom</em></h2>
+      <p class="soil-body reveal">Egypt's agricultural land is among the most fertile on earth. Millennia of annual Nile flooding have deposited rich alluvial soil that requires no synthetic fertilisation. We honour this gift by farming in harmony with the land — combining ancestral knowledge with modern organic certification.</p>
+      <div class="soil-features">
+        <div class="soil-feature" style="transition-delay:.00s">
+          <div class="soil-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+          <div><div class="soil-feature-title">Flood Irrigation</div><div class="soil-feature-desc">Natural Nile flood waters deliver minerals and nutrients directly to our crops, eliminating the need for synthetic fertilisers.</div></div>
+        </div>
+        <div class="soil-feature" style="transition-delay:.08s">
+          <div class="soil-feature-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21h2.29c.3-.78 1.25-2 2.89-3 2.54-1.49 4.39-1.99 6-2.5V8z"/></svg></div>
+          <div><div class="soil-feature-title">Zero Synthetic Inputs</div><div class="soil-feature-desc">No chemical pesticides, herbicides or artificial fertilisers — ever. Our organic certification demands nothing less.</div></div>
+        </div>
+        <div class="soil-feature" style="transition-delay:.16s">
+          <div class="soil-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+          <div><div class="soil-feature-title">Biodiversity Protection</div><div class="soil-feature-desc">We maintain habitat corridors and native plant margins to preserve the natural ecosystem around every farm.</div></div>
+        </div>
+        <div class="soil-feature" style="transition-delay:.24s">
+          <div class="soil-feature-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+          <div><div class="soil-feature-title">Community Employment</div><div class="soil-feature-desc">Our farms provide direct employment to hundreds of local families under Fairtrade-certified fair wage conditions.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="soil-canvas-wrap reveal-right">
+      <canvas id="soil-canvas"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <span class="cta-label">Source from the farm</span>
+  <h2 class="cta-heading">Direct from<br><em>Organic Farms</em></h2>
+  <div class="cta-actions">
+    <a href="index.html#contact" class="btn-primary">Request a Sample</a>
+    <a href="certificates.html"  class="btn-ghost">Our Certifications</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">SAFE HERBS <span>&amp; SPICES</span></div>
+      <p>Premium dried herbs, spices &amp; seeds from Egypt's certified organic farms — processed with world-class standards and exported globally.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="#">Herbs &amp; Infusion</a>
+      <a href="#">Seeds</a>
+      <a href="#">Onion &amp; Garlic</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="farms.html">Our Farms</a>
+      <a href="#">Quality</a>
+      <a href="#">Societal Life</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="certificates.html">Certificates</a>
+      <a href="#">Get in Touch</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Safe Herbs &amp; Spices Co. — Fayoum, Egypt</span>
+    <span>safeherbsco.com</span>
+  </div>
+</footer>
+
+
+<script src="js/farms.js"></script>
+</body>
+</html>

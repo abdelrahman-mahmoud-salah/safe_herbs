@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get In Touch — Safe Herbs &amp; Spices</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/contactUs.css">
+</head>
+
+<body>
+  <div id="cur"></div>
+  <div id="cur-ring"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="about.html" onclick="closeMobile()">About</a>
+    <a href="herbs.html" onclick="closeMobile()">Products</a>
+    <a href="farms.html" onclick="closeMobile()">Farms</a>
+    <a href="certificates.html" onclick="closeMobile()">Certificates</a>
+  </div>
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">SAFE HERBS <span>&amp; SPICES</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="herbs.html">Products</a></li>
+      <li><a href="farms.html">Farms</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get In Touch</a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <section class="page-hero">
+    <img src="https://safeherbsco.com/en/wp-content/uploads/2024/02/contact-banner.jpg"
+      alt="Contact Safe Herbs & Spices" class="hero-img" loading="eager" / decoding="async">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></div>
+      <span class="page-eyebrow">✦ Egypt · Worldwide</span>
+      <h1 class="page-title">Get<br><em>In Touch</em></h1>
+    </div>
+  </section>
+
+  <!-- MAIN CONTACT -->
+  <div class="contact-main">
+    <div class="form-side reveal">
+      <h2 class="form-heading">Send Us<br>a <em>Message</em></h2>
+      <p class="form-sub">Whether you're looking for bulk organic herbs, private-label sourcing or a partnership — we
+        respond within 24 hours.</p>
+
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="Mohamed" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Al-Rashid">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@company.com" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="company">Company</label>
+            <input type="text" id="company" placeholder="Your Company">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="country">Country</label>
+            <input type="text" id="country" placeholder="Germany">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="interest">I am interested in</label>
+          <select id="interest">
+            <option value="">Select a product category</option>
+            <option>Herbs &amp; Infusions</option>
+            <option>Premium Seeds</option>
+            <option>Onion &amp; Garlic</option>
+            <option>Private Label / Custom</option>
+            <option>Partnership &amp; Distribution</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">Your Message</label>
+          <textarea id="message"
+            placeholder="Tell us about your requirements, quantities, destination market…"></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn">Send Message ✦</button>
+        <p class="form-note">We reply within 24 hours · Your information is kept strictly confidential</p>
+      </form>
+    </div>
+
+    <div class="info-side">
+      <h3 class="info-heading">Our Team</h3>
+      <div class="contact-persons">
+        <div class="person-card" style="transition-delay:.00s">
+          <div class="person-avatar">MA</div>
+          <div class="person-info">
+            <div class="person-role">Chief Executive Officer</div>
+            <div class="person-name">Mohamed Abou Gelail</div>
+            <div class="person-contacts">
+              <a href="mailto:info@safeherbsco.com"><svg viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>info@safeherbsco.com</a>
+              <a href="tel:+201111332097"><svg viewBox="0 0 24 24">
+                  <path
+                    d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.39 21 3 14.61 3 7c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.33.03.7-.27.97l-2.2 2.26z" />
+                </svg>+20 111 133 2097</a>
+            </div>
+          </div>
+        </div>
+        <div class="person-card" style="transition-delay:.1s">
+          <div class="person-avatar">AH</div>
+          <div class="person-info">
+            <div class="person-role">Sales Manager</div>
+            <div class="person-name">Ahmed Hofida</div>
+            <div class="person-contacts">
+              <a href="mailto:a.mo@safeherbsco.com"><svg viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>a.mo@safeherbsco.com</a>
+              <a href="tel:+201145670606"><svg viewBox="0 0 24 24">
+                  <path
+                    d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.39 21 3 14.61 3 7c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.33.03.7-.27.97l-2.2 2.26z" />
+                </svg>+20 114 567 0606</a>
+            </div>
+          </div>
+        </div>
+        <div class="person-card" style="transition-delay:.2s">
+          <div class="person-avatar">YM</div>
+          <div class="person-info">
+            <div class="person-role">Quality Manager</div>
+            <div class="person-name">Yasser Mohamed</div>
+            <div class="person-contacts">
+              <a href="mailto:Yasser.mo@safeherbsco.com"><svg viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>Yasser.mo@safeherbsco.com</a>
+              <a href="tel:+201159295447"><svg viewBox="0 0 24 24">
+                  <path
+                    d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.39 21 3 14.61 3 7c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.33.03.7-.27.97l-2.2 2.26z" />
+                </svg>+20 115 929 5447</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="address-block reveal">
+        <div class="addr-label">Our Office</div>
+        <div class="addr-row">
+          <div class="addr-icon"><svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
+            </svg></div>
+          <div class="addr-text">Al Horrya St.4, Sakaran<br>63622 Fayoum, Egypt</div>
+        </div>
+        <div class="addr-row">
+          <div class="addr-icon"><svg viewBox="0 0 24 24">
+              <path
+                d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.39 21 3 14.61 3 7c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.33.03.7-.27.97l-2.2 2.26z" />
+            </svg></div>
+          <div class="addr-text">+20 115 929 5447<br>+20 114 567 0606</div>
+        </div>
+        <div class="addr-row">
+          <div class="addr-icon"><svg viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg></div>
+          <div class="addr-text">info@safeherbsco.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div class="map-section">
+    <div class="map-wrap">
+      <canvas id="map-canvas"></canvas>
+      <div class="map-overlay-label"><span>Headquarters</span><strong>Fayoum, Egypt</strong></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">SAFE HERBS <span>&amp; SPICES</span></div>
+        <p>Premium dried herbs, spices &amp; seeds from Egypt's certified organic farms — processed with world-class
+          standards and exported globally.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4><a href="herbs.html">Herbs &amp; Infusion</a><a href="#">Seeds</a><a href="#">Onion &amp;
+          Garlic</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4><a href="about.html">About Us</a><a href="farms.html">Our Farms</a><a
+          href="quality.html">Quality</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4><a href="certificates.html">Certificates</a><a href="contact.html">Get in Touch</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2024 Safe Herbs &amp; Spices Co. — Fayoum,
+        Egypt</span><span>safeherbsco.com</span></div>
+  </footer>
+
+
+  <script src="js/contactUs.js"></script>
+</body>
+
+</html>

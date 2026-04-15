@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="image/icon.jpg" sizes="any">
+  <meta name="description"
+    content="Safe Herbs & Spices — organic producer, processor, and exporter of premium dried herbs, spices and seeds from Egypt.">
+  <title>Safe Herbs &amp; Spices — Organic Producer · Processor · Exporter</title>
+
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap">
+  </noscript>
+
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link rel="modulepreload" href="js/app.js">
+  <link rel="modulepreload" href="js/productsData.js">
+</head>
+
+<body>
+
+  <div id="preloader" aria-busy="true" aria-live="polite">
+    <img src="image/icon.webp" alt="Logo" style="width: 100px; height: 100px; background-color: aliceblue;">
+    <div class="pre-logo">SAFE HERBS &amp; SPICES</div>
+    <div class="pre-line"></div>
+  </div>
+
+
+  <div id="cur" aria-hidden="true"></div>
+  <div id="cur-ring" aria-hidden="true"></div>
+
+  <div id="mobile-menu-container"></div>
+
+  <nav id="navbar">
+    <a href="/" class="nav-logo">SAFE HERBS <span>&amp; SPICES</span></a>
+    <ul class="nav-links">
+      <li><a href="/about">About</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/farms">Farms</a></li>
+      <li><a href="/certificates">Certificates</a></li>
+      <li><a href="contactUs.html">Contact</a></li>
+    </ul>
+    <a href="/contact" class="btn-outline nav-cta">Get In Touch</a>
+    <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false"
+      onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <section id="hero" aria-label="Introduction">
+    <div class="hero-static-bg"></div>
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">✦ From Egypt's Organic Farms to the World</span>
+      <h1 class="hero-title">Nature's<br><em>Finest</em><br>Herbs</h1>
+      <p class="hero-sub"><br><em><span class="typewriter"
+            data-text="Premium dried herbs, spices &amp; seeds — grown on certified organic farms across Egypt, processed to world-class standards."
+            data-delay="500"></span></em></p>
+      <!--<p class="hero-sub">Premium dried herbs, spices &amp; seeds — grown on certified organic farms across Egypt, processed to world-class standards.</p>-->
+      <div class="hero-actions">
+        <a href="/products" class="btn-primary">Explore Products</a>
+        <a href="/about" class="btn-ghost">Our Story</a>
+        <a href="/contact" class="btn-ghost" onclick="closeMobile()">Request Quote</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true" style="margin-top: 700px; margin-left: 600px;">
+      <span class="scroll-text">Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <div class="marquee-band" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Organic Certified</span><span class="sep">✦</span>
+      <span>EU Organic</span><span class="sep">✦</span>
+      <span>FSSC 22000</span><span class="sep">✦</span>
+      <span>Fairtrade</span><span class="sep">✦</span>
+      <span>Rainforest Alliance</span><span class="sep">✦</span>
+      <span>1060+ Hectares</span><span class="sep">✦</span>
+      <span>12 Certified Farms</span><span class="sep">✦</span>
+      <span>Fayoum · Beni Suef · Minia · Assuit · Luxor</span><span class="sep">✦</span>
+      <span>Organic Certified</span><span class="sep">✦</span>
+      <span>EU Organic</span><span class="sep">✦</span>
+      <span>FSSC 22000</span><span class="sep">✦</span>
+      <span>Fairtrade</span><span class="sep">✦</span>
+      <span>Rainforest Alliance</span><span class="sep">✦</span>
+      <span>1060+ Hectares</span><span class="sep">✦</span>
+      <span>12 Certified Farms</span><span class="sep">✦</span>
+      <span>Fayoum · Beni Suef · Minia · Assuit · Luxor</span><span class="sep">✦</span>
+    </div>
+  </div>
+
+  <section style="padding:0">
+    <div id="about">
+      <div class="about-visual reveal-left">
+        <div class="about-line"></div>
+        <div class="about-img-wrap">
+          <picture>
+            <source type="image/webp"
+              srcset="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=960&q=80&fm=webp">
+            <img class="about-photo"
+              src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=960&q=80&fm=webp"
+              alt="Organic herbs and fields" width="960" height="1280" loading="lazy" decoding="async"
+              data-fallback-src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=960&q=80&fm=webp">
+          </picture>
+          <canvas id="about-canvas" class="about-canvas-layer" aria-hidden="true"></canvas>
+        </div>
+        <div class="about-badge">
+          <span class="num">12</span>
+          <span class="lbl">Organic<br>Farms</span>
+        </div>
+      </div>
+      <div class="about-copy">
+        <p class="section-tag reveal">Who We Are</p>
+        <h2 class="section-heading reveal">Grown with<br><em>Integrity</em> &amp;<br>Purpose</h2>
+        <p class="section-body reveal">We source herbs, spices, and seeds directly from our extensive organic farms and
+          contracted farmers, improving quality through precision processing, filling, and packing in our GMP-certified
+          facility — delivering unmatched quality at competitive prices.</p>
+        <div class="stats-grid reveal">
+          <div class="stat-box">
+            <div class="n">1060<span>ha</span></div>
+            <div class="l">Organic Farmland</div>
+          </div>
+          <div class="stat-box">
+            <div class="n">12<span>+</span></div>
+            <div class="l">Certified Farms</div>
+          </div>
+          <div class="stat-box">
+            <div class="n">6<span>+</span></div>
+            <div class="l">Governorates</div>
+          </div>
+          <div class="stat-box">
+            <div class="n">9<span>+</span></div>
+            <div class="l">Certifications</div>
+          </div>
+        </div>
+        <a href="our_story.html" class="btn-primary reveal" onclick="closeMobile()">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="section-lazy">
+    <div class="products-header">
+      <p class="section-tag reveal">Our Range</p>
+      <h2 class="section-heading reveal">Premium <em>Products</em></h2>
+      <p class="hint reveal">From seed to harvest — each category is crafted for export-ready quality.</p>
+    </div>
+    <div id="products-mount">
+      <div class="products-skeleton" id="products-skeleton" aria-hidden="true">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0">
+    <div id="farms">
+      <div class="farms-map reveal-left">
+        <canvas id="farms-canvas" aria-hidden="true"></canvas>
+      </div>
+      <div>
+        <p class="section-tag reveal">Our Land</p>
+        <h2 class="section-heading reveal">Rooted in<br><em>Egypt's</em><br>Finest Soil</h2>
+        <p class="section-body reveal">Our vast organic farms span Egypt's most fertile governorates. Each farm is
+          individually certified and cultivated in harmony with the natural landscape — from the Nile valley to the
+          Western Desert.</p>
+        <div class="farms-list reveal">
+          <div class="farm-row">
+            <div class="farm-dot gold"></div><span class="farm-name">Fayoum Governorate</span><span
+              class="farm-status">Primary Hub</span>
+          </div>
+          <div class="farm-row">
+            <div class="farm-dot sage"></div><span class="farm-name">Beni Suef · Al Minia</span><span
+              class="farm-status">Central</span>
+          </div>
+          <div class="farm-row">
+            <div class="farm-dot earth"></div><span class="farm-name">Assuit · Luxor · Al Wahat</span><span
+              class="farm-status">Expanding</span>
+          </div>
+
+          <a href="farms.html" onclick="closeMobile()" class="btn-ghost" style="background-color: #3d5c3d;"><span
+              class="name"> more info</span></a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="certs">
+    <div class="certs-header">
+      <p class="section-tag reveal">Quality Assured</p>
+      <h2 class="section-heading reveal">Our <em>Certifications</em></h2>
+      <p class="section-body reveal" style="max-width:560px;margin:0 auto">Every batch is backed by internationally
+        recognised certifications — ensuring complete confidence from field to shelf.</p>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-item" style="transition-delay:.00s">
+        <div class="cert-icon"><svg viewBox="0 0 52 52" aria-hidden="true">
+            <circle cx="26" cy="26" r="22" fill="none" stroke="#3d5c3d" stroke-width="1.5" />
+            <path d="M18 26l5 5 11-11" fill="none" stroke="#3d5c3d" stroke-width="2" stroke-linecap="round" />
+            <circle cx="26" cy="26" r="16" fill="none" stroke="#c8a052" stroke-width=".5" />
+          </svg></div>
+        <a href="certificates.html" onclick="closeMobile()" class="nav-logo"><span class="cert-name">EU
+            Organic</span></a>
+
+      </div>
+      <div class="cert-item" style="transition-delay:.08s">
+        <div class="cert-icon"><svg viewBox="0 0 52 52" aria-hidden="true">
+            <rect x="8" y="8" width="36" height="36" fill="none" stroke="#3d5c3d" stroke-width="1.5" />
+            <rect x="14" y="14" width="24" height="24" fill="none" stroke="#c8a052" stroke-width=".5" /><text x="26"
+              y="30" text-anchor="middle" font-size="9" fill="#3d5c3d" font-family="serif"
+              font-style="italic">NOP</text>
+          </svg></div>
+        <a href="certificates.html" onclick="closeMobile()" class="nav-logo"><span class="cert-name">USDA NOP</span></a>
+      </div>
+      <div class="cert-item" style="transition-delay:.16s">
+        <div class="cert-icon"><svg viewBox="0 0 52 52" aria-hidden="true">
+            <polygon points="26,6 46,18 46,34 26,46 6,34 6,18" fill="none" stroke="#3d5c3d" stroke-width="1.5" /><text
+              x="26" y="29" text-anchor="middle" font-size="7" fill="#3d5c3d" font-family="sans-serif"
+              font-weight="600">FSSC</text><text x="26" y="38" text-anchor="middle" font-size="6" fill="#c8a052"
+              font-family="sans-serif">22000</text>
+          </svg></div>
+        <a href="certificates.html" onclick="closeMobile()" class="nav-logo"><span class="cert-name">FSSC
+            22000</span></a>
+
+      </div>
+      <div class="cert-item" style="transition-delay:.24s">
+        <div class="cert-icon"><svg viewBox="0 0 52 52" aria-hidden="true">
+            <circle cx="26" cy="26" r="20" fill="none" stroke="#3d5c3d" stroke-width="1.5" />
+            <path d="M26 14Q34 22 26 30Q18 22 26 14Z" fill="#c8a052" opacity=".6" />
+            <path d="M26 22Q34 30 26 38Q18 30 26 22Z" fill="#6b8c6b" opacity=".6" />
+          </svg></div>
+
+        <a href="certificates.html" onclick="closeMobile()" class="nav-logo"><span
+            class="cert-name">Fairtrade</span></a>
+      </div>
+      <div class="cert-item" style="transition-delay:.32s">
+        <div class="cert-icon"><svg viewBox="0 0 52 52" aria-hidden="true">
+            <circle cx="26" cy="26" r="20" fill="none" stroke="#3d5c3d" stroke-width="1.5" />
+            <path d="M20 32Q26 14 32 32Q26 26 20 32Z" fill="#6b8c6b" opacity=".7" />
+            <path d="M18 30C18 20 34 20 34 30" fill="none" stroke="#c8a052" stroke-width="1" />
+          </svg></div>
+
+        <a href="certificates.html" onclick="closeMobile()" class="nav-logo"><span class="cert-name">Rainforest
+            Alliance</span></a>
+      </div>
+      <div class="cert-item" style="transition-delay:.40s">
+        <div class="cert-icon"><svg viewBox="0 0 52 52" aria-hidden="true">
+            <rect x="10" y="10" width="32" height="32" rx="4" fill="none" stroke="#3d5c3d" stroke-width="1.5" /><text
+              x="26" y="30" text-anchor="middle" font-size="8" fill="#3d5c3d" font-family="sans-serif"
+              font-weight="600">BRC</text>
+          </svg></div>
+        <a href="certificates.html" onclick="closeMobile()" class="nav-logo"><span class="cert-name">BRC
+            Global</span></a>
+      </div>
+      <div class="cert-item" style="transition-delay:.48s">
+        <div class="cert-icon"><svg viewBox="0 0 52 52" aria-hidden="true">
+            <circle cx="26" cy="26" r="20" fill="none" stroke="#c8a052" stroke-width="1.5" />
+            <circle cx="26" cy="26" r="12" fill="none" stroke="#3d5c3d" stroke-width="1" />
+            <circle cx="26" cy="26" r="5" fill="#6b8c6b" />
+          </svg></div>
+        <a href="certificates.html" onclick="closeMobile()" class="nav-logo"><span class="cert-name">ISO 9001</span></a>
+
+      </div>
+      <div class="cert-item" style="transition-delay:.56s">
+        <div class="cert-icon"><svg viewBox="0 0 52 52" aria-hidden="true">
+            <polygon points="26,4 30,18 44,18 33,27 37,41 26,32 15,41 19,27 8,18 22,18" fill="none" stroke="#3d5c3d"
+              stroke-width="1.5" />
+            <polygon points="26,10 29,20 40,20 31,26 34,36 26,30 18,36 21,26 12,20 23,20" fill="#c8a052"
+              opacity=".22" />
+          </svg></div>
+        <a href="certificates.html" onclick="closeMobile()" class="nav-logo"><span class="cert-name">Halal</span></a>
+      </div>
+    </div>
+
+    <div style="transition-delay:.32s;  padding-left: 1000px;padding-top: 35px;
+  position: absolute;">
+      <a href="certificates.html" class="btn-ghost" style="background-color: #3d5c3d;" onclick="closeMobile()"> more
+        info </a>
+    </div>
+
+  </section>
+
+  <section id="contact">
+    <canvas id="contact-canvas" aria-hidden="true"></canvas>
+    <div class="contact-col">
+      <p class="section-tag reveal">Reach Out</p>
+      <h2 class="section-heading reveal">Let's Work<br><em>Together</em></h2>
+      <p class="section-body reveal" style="color:rgba(245,240,232,.65)">Whether you're a distributor, retailer, or
+        brand — we're ready to become your trusted organic supply partner.</p>
+      <div class="contact-cta-row reveal">
+        <a class="btn-primary" href="mailto:info@safeherbsco.com?subject=Quote%20request" data-spa-ignore="true">Request
+          Quote</a>
+        <a class="btn-ghost" href="mailto:info@safeherbsco.com" data-spa-ignore="true">Email Us</a>
+      </div>
+      <div class="contact-detail reveal">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
+          </svg></div>
+        <div>
+          <p class="contact-label">Address</p>
+          <p class="contact-val">Al Horrya St.4, Sakaran<br>63622 Fayoum, Egypt</p>
+        </div>
+      </div>
+      <div class="contact-detail reveal">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.39 21 3 14.61 3 7c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.33.03.7-.27.97l-2.2 2.26z" />
+          </svg></div>
+        <div>
+          <p class="contact-label">Phone</p>
+          <p class="contact-val">+20 115 929 5447<br>+20 114 567 0606</p>
+        </div>
+      </div>
+      <div class="contact-detail reveal">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+          </svg></div>
+        <div>
+          <p class="contact-label">Email</p>
+          <p class="contact-val"><a href="mailto:info@safeherbsco.com" data-spa-ignore="true">info@safeherbsco.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-col reveal-right">
+      <div class="form-group"><input type="text" name="name" autocomplete="name" placeholder="Your Name"
+          aria-label="Your Name"></div>
+      <div class="form-group"><input type="email" name="email" autocomplete="email" placeholder="Email Address"
+          aria-label="Email Address"></div>
+      <div class="form-group"><input type="text" name="company" autocomplete="organization"
+          placeholder="Company / Country" aria-label="Company or Country"></div>
+      <div class="form-group"><textarea name="message" placeholder="Tell us about your requirements..."
+          aria-label="Your requirements"></textarea></div>
+      <button type="button" class="btn-submit" id="contact-submit">Send Message ✦</button>
+    </div>
+    <a href="contactUs.html" onclick="closeMobile()" class="btn-ghost" style="background-color: #3d5c3d;"><span
+        class="name"> Contact Us</span></a>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand reveal">
+        <div class="footer-logo">SAFE HERBS <span>&amp; SPICES</span></div>
+        <p>Premium dried herbs, spices &amp; seeds from Egypt's certified organic farms — processed with world-class
+          standards and exported globally.</p>
+      </div>
+      <div class="footer-col reveal">
+        <h4>Products</h4>
+        <a href="safeherbs-products.html">Herbs &amp; Infusion</a>
+        <a href="safeherbs-products.html">Seeds</a>
+        <a href="safeherbs-products.html">Onion &amp; Garlic</a>
+      </div>
+      <div class="footer-col reveal">
+        <h4>Company</h4>
+        <a href="/about" onclick="closeMobile()">About Us</a>
+        <a href="/farms" onclick="closeMobile()">Our Farms</a>
+        <a href="certificates.html" onclick="closeMobile()">Quality</a>
+        <a href="/contact" onclick="closeMobile()">Societal Life</a>
+      </div>
+
+      <div class="footer-col reveal">
+        <h4>Connect</h4>
+        <a href="certificates.html" onclick="closeMobile()">Certificates</a>
+        <a href="/contact" onclick="closeMobile()">Get in Touch</a>
+        <a href="/contact" onclick="closeMobile()">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom reveal">
+      <span>© 2026 Safe Herbs &amp; Spices Co. — Fayoum, Egypt</span>
+      <span>safeherbsco.com</span>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js" defer></script>
+  <script type="module" src="js/mobileMenu.js" defer></script>
+
+  <script src="js/index.js" defer></script>
+</body>
+
+</html>

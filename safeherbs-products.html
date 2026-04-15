@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="dns-prefetch" href="//safeherbsco.com">
+  <link rel="preconnect" href="https://safeherbsco.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <title>Products — Safe Herbs &amp; Spices</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/products.css">
+</head>
+
+<body>
+  <div id="cur"></div>
+  <div id="cur-ring"></div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="products.html" onclick="closeMobile()">Products</a>
+    <a href="farms.html" onclick="closeMobile()">Farms</a>
+    <a href="certificates.html" onclick="closeMobile()">Certificates</a>
+    <a href="contact.html" onclick="closeMobile()">Contact</a>
+  </div>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">SAFE HERBS <span>&amp; SPICES</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="farms.html">Farms</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get In Touch</a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section class="page-hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Products</span></div>
+      <span class="hero-eyebrow">✦ Certified Organic · Egypt</span>
+      <h1 class="hero-title">Our<br><em>Products</em></h1>
+      <p class="hero-sub">Herbs &amp; Infusions · Premium Seeds · Onion &amp; Garlic — all grown on certified organic
+        Egyptian farms and processed to international standards.</p>
+    </div>
+  </section>
+
+  <!-- ══ MARQUEE ══ -->
+  <div class="marquee-band" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Chamomile</span><span class="sep">✦</span><span>Peppermint</span><span class="sep">✦</span>
+      <span>White Sesame</span><span class="sep">✦</span><span>Hibiscus</span><span class="sep">✦</span>
+      <span>Nigella</span><span class="sep">✦</span><span>Rosemary</span><span class="sep">✦</span>
+      <span>Garlic</span><span class="sep">✦</span><span>Coriander</span><span class="sep">✦</span>
+      <span>Spearmint</span><span class="sep">✦</span><span>Fennel</span><span class="sep">✦</span>
+      <span>Onion</span><span class="sep">✦</span><span>Caraway</span><span class="sep">✦</span>
+      <span>Chamomile</span><span class="sep">✦</span><span>Peppermint</span><span class="sep">✦</span>
+      <span>White Sesame</span><span class="sep">✦</span><span>Hibiscus</span><span class="sep">✦</span>
+      <span>Nigella</span><span class="sep">✦</span><span>Rosemary</span><span class="sep">✦</span>
+      <span>Garlic</span><span class="sep">✦</span><span>Coriander</span><span class="sep">✦</span>
+      <span>Spearmint</span><span class="sep">✦</span><span>Fennel</span><span class="sep">✦</span>
+      <span>Onion</span><span class="sep">✦</span><span>Caraway</span><span class="sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ══ STICKY TABS ══ -->
+  <div class="cat-tabs" id="catTabs">
+    <button class="cat-tab active" onclick="scrollToSection('herbs')" data-section="herbs">
+      <span class="cat-tab-icon">🌿</span> Herbs &amp; Infusion <span class="cat-tab-count">15</span>
+    </button>
+    <button class="cat-tab" onclick="scrollToSection('seeds')" data-section="seeds">
+      <span class="cat-tab-icon">🌾</span> Seeds <span class="cat-tab-count">9</span>
+    </button>
+    <button class="cat-tab" onclick="scrollToSection('oniongarlic')" data-section="oniongarlic">
+      <span class="cat-tab-icon">🧅</span> Onion &amp; Garlic <span class="cat-tab-count">2</span>
+    </button>
+  </div>
+
+  <!-- ══════════════════════════
+     SECTION 1: HERBS & INFUSION
+══════════════════════════ -->
+
+  <section id="herbs" class="cat-section" style="background:var(--charcoal);padding-bottom:80px">
+
+    <div class="cat-header reveal">
+      <div class="cat-header-left">
+        <p class="section-tag" style="color:var(--gold-light)">Category 01</p>
+        <h2 class="section-title" style="color:var(--cream)">
+          Herbs &amp;<br><em style="color:var(--gold-light)">Infusion</em>
+        </h2>
+      </div>
+
+      <div class="cat-header-right">
+        <p class="cat-desc" style="color:rgba(245,240,232,.62)">
+          Handpicked from our certified organic farms across the Nile Valley — chamomile, peppermint, hibiscus and
+          twelve more varieties.
+        </p>
+
+        <div class="cat-tags">
+          <span class="cat-tag">EU Organic</span>
+          <span class="cat-tag">USDA NOP</span>
+          <span class="cat-tag">Fairtrade</span>
+          <span class="cat-tag">15 Varieties</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID -->
+    <div class="products-grid cols-3">
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Chamomile-1.webp" alt="Chamomile">
+        <div class="prod-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">01</div>
+          <div class="prod-name">Chamomile</div>
+          <div class="prod-latin">Matricaria chamomilla L.</div>
+          <div class="prod-chips">
+            <span class="chip">Dried</span><span class="chip">Organic</span><span class="chip">NOP</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Peppermint.webp" alt="Peppermint">
+        <div class="prod-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">02</div>
+          <div class="prod-name">Peppermint</div>
+          <div class="prod-latin">Mentha piperita</div>
+          <div class="prod-chips">
+            <span class="chip">Cut & Sifted</span><span class="chip">Fairtrade</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Spearmint.webp" alt="Spearmint">
+        <div class="prod-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">03</div>
+          <div class="prod-name">Spearmint</div>
+          <div class="prod-latin">Mentha spicata</div>
+          <div class="prod-chips">
+            <span class="chip">Dried</span><span class="chip">Organic</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Hibiscus-1.webp" alt="Hibiscus">
+        <div class="prod-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">04</div>
+          <div class="prod-name">Hibiscus</div>
+          <div class="prod-latin">Hibiscus sabdariffa</div>
+          <div class="prod-chips">
+            <span class="chip">Whole Flower</span><span class="chip">NOP</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Rosemary-1.webp" alt="Rosemary">
+        <div class="seed-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">05</div>
+          <div class="prod-name">Rosemary</div>
+          <div class="prod-latin">Salvia rosmarinus</div>
+          <div class="prod-chips">
+            <span class="chip">Dried</span><span class="chip">Organic</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Basil-1.webp" alt="Basil">
+        <div class="seed-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">06</div>
+          <div class="prod-name">Basil</div>
+          <div class="prod-latin">Ocimum basilicum</div>
+          <div class="prod-chips">
+            <span class="chip">Dried</span><span class="chip">Fairtrade</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Sage-1-600x400.webp" alt="Sage">
+        <div class="seed-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">07</div>
+          <div class="prod-name">Sage</div>
+          <div class="prod-latin">Salvia officinalis</div>
+          <div class="prod-chips">
+            <span class="chip">Dried</span><span class="chip">Organic</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Marjoram.webp" alt="Marjoram">
+        <div class="seed-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">08</div>
+          <div class="prod-name">Marjoram</div>
+          <div class="prod-latin">Origanum majorana</div>
+          <div class="prod-chips">
+            <span class="chip">Dried</span><span class="chip">Fairtrade</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Calendula-1.webp" alt="Calendula">
+        <div class="seed-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">09</div>
+          <div class="prod-name">Calendula</div>
+          <div class="prod-latin">Calendula officinalis</div>
+          <div class="prod-chips">
+            <span class="chip">Petals</span><span class="chip">Organic</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Lemongrass-1.webp" alt="Lemongrass">
+        <div class="seed-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">10</div>
+          <div class="prod-name">Lemongrass</div>
+          <div class="prod-latin">Cymbopogon citratus</div>
+          <div class="prod-chips">
+            <span class="chip">Cut</span><span class="chip">Fairtrade</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Licorice-1.webp" alt="Licorice">
+        <div class="seed-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">11</div>
+          <div class="prod-name">Licorice</div>
+          <div class="prod-latin">Glycyrrhiza glabra</div>
+          <div class="prod-chips">
+            <span class="chip">Root</span><span class="chip">Dried</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Parsley-Leaves-1.webp" alt="Parsley">
+        <div class="seed-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">12</div>
+          <div class="prod-name">Parsley</div>
+          <div class="prod-latin">Petroselinum crispum</div>
+          <div class="prod-chips">
+            <span class="chip">Dried Leaves</span><span class="chip">NOP</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Laura-Leaves-1.webp" alt="Bay Leaves">
+        <div class="seed-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">13</div>
+          <div class="prod-name">Bay Leaves</div>
+          <div class="prod-latin">Laurus nobilis</div>
+          <div class="prod-chips">
+            <span class="chip">Whole</span><span class="chip">Organic</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Echinacia-1.webp" alt="Echinacea">
+        <div class="seed-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">14</div>
+          <div class="prod-name">Echinacea</div>
+          <div class="prod-latin">Echinacea purpurea</div>
+          <div class="prod-chips">
+            <span class="chip">Dried</span><span class="chip">Organic</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="prod-card">
+        <img class="prod-img" src="image/Molokhia-1 (1).webp" alt="Molokhia">
+        <div class="seed-overlay"></div>
+        <div class="prod-info">
+          <div class="prod-num">15</div>
+          <div class="prod-name">Molokhia</div>
+          <div class="prod-latin">Corchorus olitorius</div>
+          <div class="prod-chips">
+            <span class="chip">Dried Leaves</span><span class="chip">Organic</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+     SECTION 2: SEEDS (real product images)
+══════════════════════════ -->
+  <section id="seeds" class="cat-section" style="background:var(--parchment)">
+    <div class="cat-header reveal">
+      <div class="cat-header-left">
+        <p class="section-tag">Category 02</p>
+        <h2 class="section-title">Premium<br><em>Seeds</em></h2>
+      </div>
+      <div class="cat-header-right">
+        <p class="cat-desc">Nine premium organic seed varieties grown on our Nile Valley farms — sesame, nigella,
+          fennel, cumin, coriander, fenugreek, anise, caraway and more. Cleaned, graded and sorted to your exact
+          specification.</p>
+        <div class="cat-tags">
+          <span class="cat-tag">EU Organic</span>
+          <span class="cat-tag">USDA NOP</span>
+          <span class="cat-tag">Fairtrade</span>
+          <span class="cat-tag">9 Varieties</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seeds use REAL product images from safeherbsco.com -->
+    <div class="products-grid cols-3">
+
+      <a href="contact.html" class="seed-card">
+        <img class="seed-img" src="https://safeherbsco.com/en/wp-content/uploads/2024/02/White-Sesame.jpg"
+          alt="White Sesame Seeds" loading="lazy" decoding="async">
+        <div class="seed-overlay"></div>
+        <div class="seed-info">
+          <div class="seed-num">01</div>
+          <div class="seed-name">White Sesame</div>
+          <div class="seed-latin">Sesamum indicum</div>
+          <div class="seed-chips"><span class="chip">Hulled</span><span class="chip">Natural</span><span
+              class="chip">Fairtrade</span></div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="seed-card">
+        <img class="seed-img" src="https://safeherbsco.com/en/wp-content/uploads/2024/02/Nigella.jpg"
+          alt="Nigella Seeds" loading="lazy" decoding="async">
+        <div class="seed-overlay"></div>
+        <div class="seed-info">
+          <div class="seed-num">02</div>
+          <div class="seed-name">Nigella</div>
+          <div class="seed-latin">Nigella Sativa</div>
+          <div class="seed-chips"><span class="chip">Whole</span><span class="chip">Organic</span><span
+              class="chip">NOP</span></div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="seed-card">
+        <img class="seed-img" src="https://safeherbsco.com/en/wp-content/uploads/2024/02/Golden-Sesame.jpg"
+          alt="Golden Sesame Seeds" loading="lazy" decoding="async">
+        <div class="seed-overlay"></div>
+        <div class="seed-info">
+          <div class="seed-num">03</div>
+          <div class="seed-name">Golden Sesame</div>
+          <div class="seed-latin">Sesamum indicum</div>
+          <div class="seed-chips"><span class="chip">Natural</span><span class="chip">Fairtrade</span></div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="seed-card">
+        <img class="seed-img" src="https://safeherbsco.com/en/wp-content/uploads/2024/02/Fennel.jpg" alt="Fennel Seeds"
+          loading="lazy" decoding="async">
+        <div class="seed-overlay"></div>
+        <div class="seed-info">
+          <div class="seed-num">04</div>
+          <div class="seed-name">Fennel</div>
+          <div class="seed-latin">Foeniculum Vulgare</div>
+          <div class="seed-chips"><span class="chip">Whole</span><span class="chip">Organic</span></div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="seed-card">
+        <img class="seed-img" src="https://safeherbsco.com/en/wp-content/uploads/2024/02/Cumin-Seeds.jpg"
+          alt="Cumin Seeds" loading="lazy" decoding="async">
+        <div class="seed-overlay"></div>
+        <div class="seed-info">
+          <div class="seed-num">05</div>
+          <div class="seed-name">Cumin Seeds</div>
+          <div class="seed-latin">Cuminum cyminum</div>
+          <div class="seed-chips"><span class="chip">Whole</span><span class="chip">Fairtrade</span></div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="seed-card">
+        <img class="seed-img" src="https://safeherbsco.com/en/wp-content/uploads/2024/02/Coriander-seeds.jpg"
+          alt="Coriander Seeds" loading="lazy" decoding="async">
+        <div class="seed-overlay"></div>
+        <div class="seed-info">
+          <div class="seed-num">06</div>
+          <div class="seed-name">Coriander Seeds</div>
+          <div class="seed-latin">Coriandrum sativum</div>
+          <div class="seed-chips"><span class="chip">Whole</span><span class="chip">Organic</span></div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="seed-card">
+        <img class="seed-img" src="https://safeherbsco.com/en/wp-content/uploads/2024/02/Fenugreek-1-300x198.png"
+          alt="Fenugreek Seeds" loading="lazy" decoding="async" style="object-position:center">
+        <div class="seed-overlay"></div>
+        <div class="seed-info">
+          <div class="seed-num">07</div>
+          <div class="seed-name">Fenugreek</div>
+          <div class="seed-latin">Trigonella foenum-graecum</div>
+          <div class="seed-chips"><span class="chip">Whole</span><span class="chip">Fairtrade</span></div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="seed-card">
+        <img class="seed-img" src="https://safeherbsco.com/en/wp-content/uploads/2024/02/anise.jpg" alt="Anise Seeds"
+          loading="lazy" decoding="async">
+        <div class="seed-overlay"></div>
+        <div class="seed-info">
+          <div class="seed-num">08</div>
+          <div class="seed-name">Anise Seeds</div>
+          <div class="seed-latin">anīsum</div>
+          <div class="seed-chips"><span class="chip">Whole</span><span class="chip">Organic</span></div>
+        </div>
+      </a>
+
+      <a href="contact.html" class="seed-card">
+        <img class="seed-img" src="https://safeherbsco.com/en/wp-content/uploads/2024/02/Caraway.jpg"
+          alt="Caraway Seeds" loading="lazy" decoding="async">
+        <div class="seed-overlay"></div>
+        <div class="seed-info">
+          <div class="seed-num">09</div>
+          <div class="seed-name">Caraway</div>
+          <div class="seed-latin">Carum Carvi</div>
+          <div class="seed-chips"><span class="chip">Whole</span><span class="chip">Fairtrade</span></div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+     SECTION 3: ONION & GARLIC
+══════════════════════════ -->
+
+  <section id="oniongarlic" class="cat-section" style="background:var(--charcoal);padding-bottom:100px">
+    <div class="cat-header reveal">
+      <div class="cat-header-left">
+        <p class="section-tag" style="color:var(--gold-light)">Category 03</p>
+        <h2 class="section-title" style="color:var(--cream)">Onion &amp;<br><em
+            style="color:var(--gold-light)">Garlic</em></h2>
+      </div>
+      <div class="cat-header-right">
+        <p class="cat-desc" style="color:rgba(245,240,232,.62)">Dehydrated onion and garlic grown in the fertile soils
+          of our Fayoum and Beni Suef farms — available in flakes, powder, granules and slices, to any specification for
+          the food industry.</p>
+        <div class="cat-tags">
+          <span class="cat-tag" style="border-color:rgba(200,160,82,.3);color:var(--gold)">EU Organic</span>
+          <span class="cat-tag" style="border-color:rgba(200,160,82,.3);color:var(--gold)">USDA NOP</span>
+          <span class="cat-tag" style="border-color:rgba(200,160,82,.3);color:var(--gold)">Dehydrated</span>
+          <span class="cat-tag" style="border-color:rgba(200,160,82,.3);color:var(--gold)">Custom Cuts</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="og-showcase">
+
+      <!-- GARLIC -->
+      <a href="contact.html" class="og-card" id="ogGarlic">
+        <img class="seed-img" src="image/Garlic.webp" alt="Caraway Seeds" loading="lazy" decoding="async">
+        <div class="og-overlay"></div>
+        <div class="og-badge"><span class="og-badge-text">Certified Organic</span></div>
+        <div class="og-info">
+          <div class="og-num">01</div>
+          <div class="og-name">Garlic</div>
+          <div class="og-latin">Allium sativum</div>
+          <div class="og-chips">
+            <span class="chip">Dehydrated</span>
+            <span class="chip">Flakes</span>
+            <span class="chip">Powder</span>
+            <span class="chip">Granules</span>
+            <span class="chip">Organic</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ONION -->
+      <a href="contact.html" class="og-card" id="ogOnion">
+        <img class="seed-img" src="image/Onion.webp" alt="Caraway Seeds" loading="lazy" decoding="async">
+        <div class="og-overlay"></div>
+        <div class="og-badge"><span class="og-badge-text">Certified Organic</span></div>
+        <div class="og-info">
+          <div class="og-num">02</div>
+          <div class="og-name">Onion</div>
+          <div class="og-latin">Allium cepa</div>
+          <div class="og-chips">
+            <span class="chip">Dehydrated</span>
+            <span class="chip">Sliced</span>
+            <span class="chip">Powder</span>
+            <span class="chip">Minced</span>
+            <span class="chip">Organic</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section class="cta-band">
+    <span class="cta-eyebrow">Source direct from the farm</span>
+    <h2 class="cta-title">Organic Quality,<br><em>Any Quantity</em></h2>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-primary">Request Samples &amp; Pricing</a>
+      <a href="certificates.html" class="btn-ghost">View Certifications</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">SAFE HERBS <span>&amp; SPICES</span></div>
+        <p>Premium dried herbs, spices &amp; seeds from Egypt's certified organic farms — exported globally since 1942.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4><a href="#herbs">Herbs &amp; Infusion</a><a href="#seeds">Seeds</a><a href="#oniongarlic">Onion
+          &amp; Garlic</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4><a href="about.html">About Us</a><a href="farms.html">Our Farms</a><a
+          href="quality.html">Quality</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4><a href="certificates.html">Certificates</a><a href="contact.html">Get in Touch</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2024 Safe Herbs &amp; Spices Co. — Fayoum,
+        Egypt</span><span>safeherbsco.com</span></div>
+  </footer>
+
+  <script src="js/product.js"></script>
+</body>
+
+</html>

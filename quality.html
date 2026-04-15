@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quality — Safe Herbs &amp; Spices</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/quality.css">
+</head>
+
+<body>
+
+  <div id="cur"></div>
+  <div id="cur-ring"></div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="herbs.html" onclick="closeMobile()">Products</a>
+    <a href="farms.html" onclick="closeMobile()">Farms</a>
+    <a href="certificates.html" onclick="closeMobile()">Certificates</a>
+    <a href="index.html#contact" onclick="closeMobile()">Contact</a>
+  </div>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">SAFE HERBS <span>&amp; SPICES</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="herbs.html">Products</a></li>
+      <li><a href="farms.html">Farms</a></li>
+      <li><a href="quality.html" class="active">Quality</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#contact" class="nav-cta">Get In Touch</a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Quality</span></div>
+      <span class="page-eyebrow">✦ From Raw Material to Final Export</span>
+      <h1 class="page-title">Our<br><em>Quality</em><br>Process</h1>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <div class="intro-band">
+    <div class="intro-inner">
+      <p class="intro-tag reveal">Our Standard</p>
+      <p class="intro-body reveal">
+        Once raw material arrives at our factory, it is inspected sensorially by the quality team
+        and then analysed by <strong>external accredited laboratories</strong>. We do not release any material
+        for processing until results comply fully with required specifications.
+        Every step — from gravity separation to final container testing — is documented,
+        sampled and retained for <strong>two full years</strong> as a traceable quality record.
+      </p>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stat-cell">
+      <div class="stat-num">7</div>
+      <div class="stat-lbl">Process Stages</div>
+    </div>
+    <div class="stat-cell" style="transition-delay:.07s">
+      <div class="stat-num">2<span style="font-size:28px;color:rgba(200,160,82,.6)">yr</span></div>
+      <div class="stat-lbl">Sample Retention</div>
+    </div>
+    <div class="stat-cell" style="transition-delay:.14s">
+      <div class="stat-num">100<span style="font-size:28px;color:rgba(200,160,82,.6)">%</span></div>
+      <div class="stat-lbl">Batches Tested</div>
+    </div>
+    <div class="stat-cell" style="transition-delay:.21s">
+      <div class="stat-num">0</div>
+      <div class="stat-lbl">Synthetic Inputs</div>
+    </div>
+  </div>
+
+  
+  <!-- ════════════════════════════════════
+     PHOTO BLOCK 1 — Reception & Sieving
+════════════════════════════════════ -->
+  <div class="photo-section">
+    <div class="photo-block left-img">
+      <div class="photo-panel reveal-left">
+        <img src="https://safeherbsco.com/en/wp-content/uploads/2024/02/MHA08727-Edit.jpg"
+          alt="Sieving raw material at Safe Herbs & Spices facility" loading="lazy" / decoding="async">
+        <div class="photo-overlay"></div>
+        <div class="photo-panel-badge"><span>Stage 01 — 03</span></div>
+      </div>
+      <div class="text-panel dark">
+        <div class="watermark">01</div>
+        <p class="step-tag dark-t reveal">Reception &amp; Cleaning</p>
+        <h2 class="step-heading dark-t reveal">Inspect.<br><em>Sieve.</em> Separate.</h2>
+        <p class="step-body dark-t reveal">Every batch entering our facility passes through a rigorous multi-step
+          initial process before any production begins. We hold raw material in quarantine until laboratory analysis
+          confirms full specification compliance.</p>
+        <div class="step-checklist">
+          <div class="check-item" style="transition-delay:.00s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" />
+              </svg></div>
+            <div class="check-text dark-t">Sensory inspection by trained quality team on arrival</div>
+          </div>
+          <div class="check-item" style="transition-delay:.08s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" />
+              </svg></div>
+            <div class="check-text dark-t">External accredited laboratory analysis before release</div>
+          </div>
+          <div class="check-item" style="transition-delay:.16s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" />
+              </svg></div>
+            <div class="check-text dark-t">Sieving to remove dust and fine contaminants</div>
+          </div>
+          <div class="check-item" style="transition-delay:.24s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" />
+              </svg></div>
+            <div class="check-text dark-t">Gravity machine separation of stones and foreign bodies</div>
+          </div>
+          <div class="check-item" style="transition-delay:.32s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" />
+              </svg></div>
+            <div class="check-text dark-t">Sizing or crushing applied (not applicable for seed lines)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CINEMA SEPARATOR -->
+  <div class="cinema-block">
+    <img src="https://safeherbsco.com/en/wp-content/uploads/2024/02/MHA08757-Edit.jpg"
+      alt="Processing and milling line at Safe Herbs & Spices" loading="lazy" / decoding="async">
+    <div class="cinema-overlay"></div>
+    <div class="cinema-label">
+      <h3>Precision<br><em>Processing</em></h3>
+      <p>Our GMP-certified processing lines operate under continuous monitoring. Every machine, every batch, every
+        outcome is logged and traceable.</p>
+    </div>
+  </div>
+
+  <!-- PHOTO BLOCK 2 — Milling & Sorting -->
+  <div class="photo-section">
+    <div class="photo-block right-img">
+      <div class="text-panel parchment">
+        <div class="watermark">02</div>
+        <p class="step-tag light reveal">Milling &amp; Colour Sorting</p>
+        <h2 class="step-heading light-t reveal">Mill.<br><em>Sort.</em> Refine.</h2>
+        <p class="step-body light-t reveal">After initial cleaning, material enters the precision milling and optical
+          colour-sorting lines. State-of-the-art optical sorters detect and reject any foreign bodies or off-colour
+          material at machine speed, ensuring a product of exceptional purity.</p>
+        <div class="step-checklist">
+          <div class="check-item" style="transition-delay:.00s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" stroke="var(--gold)" stroke-width="1.5" fill="none" />
+              </svg></div>
+            <div class="check-text light-t">Milling to customer-specified particle size</div>
+          </div>
+          <div class="check-item" style="transition-delay:.08s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" stroke="var(--gold)" stroke-width="1.5" fill="none" />
+              </svg></div>
+            <div class="check-text light-t">Pre-sort sieving to protect optical sorter from blockage</div>
+          </div>
+          <div class="check-item" style="transition-delay:.16s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" stroke="var(--gold)" stroke-width="1.5" fill="none" />
+              </svg></div>
+            <div class="check-text light-t">Optical colour sorting — rejects discoloured material</div>
+          </div>
+          <div class="check-item" style="transition-delay:.24s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" stroke="var(--gold)" stroke-width="1.5" fill="none" />
+              </svg></div>
+            <div class="check-text light-t">Final sieve pass to clear any residual foreign bodies</div>
+          </div>
+        </div>
+      </div>
+      <div class="photo-panel reveal-right">
+        <img src="https://safeherbsco.com/en/wp-content/uploads/2024/02/qu1.png"
+          alt="Quality control and packaging at Safe Herbs & Spices" loading="lazy" / decoding="async">
+        <div class="photo-overlay"></div>
+        <div class="photo-panel-badge"><span>Stage 04 — 07</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO BLOCK 3 — Packaging & Export -->
+  <div class="photo-section" style="border-top:2px solid var(--gold)">
+    <div class="photo-block left-img">
+      <!-- reuse first image for dramatic close-up, slightly offset via object-position -->
+      <div class="photo-panel reveal-left" style="min-height:560px">
+        <img src="https://safeherbsco.com/en/wp-content/uploads/2024/02/MHA08727-Edit.jpg"
+          alt="Final packaging and export preparation" loading="lazy" style="object-position:center 60%" /
+          decoding="async">
+        <div class="photo-overlay"></div>
+        <div class="photo-panel-badge"><span>Stage Final</span></div>
+      </div>
+      <div class="text-panel dark">
+        <div class="watermark">03</div>
+        <p class="step-tag dark-t reveal">Packaging &amp; Export</p>
+        <h2 class="step-heading dark-t reveal">Pack.<br><em>Test.</em> Ship.</h2>
+        <p class="step-body dark-t reveal">The final stage is where our commitment to traceability is most visible.
+          Every container is tested before it leaves, and a retained sample is stored in our archive for two years — so
+          we can answer questions about any shipment, anywhere in the world, at any time.</p>
+        <div class="step-checklist">
+          <div class="check-item" style="transition-delay:.00s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" />
+              </svg></div>
+            <div class="check-text dark-t">Packaging designed to exact customer specification</div>
+          </div>
+          <div class="check-item" style="transition-delay:.08s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" />
+              </svg></div>
+            <div class="check-text dark-t">Labelling compliant with customer and export market requirements</div>
+          </div>
+          <div class="check-item" style="transition-delay:.16s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" />
+              </svg></div>
+            <div class="check-text dark-t">Sample taken from every finished batch and tested</div>
+          </div>
+          <div class="check-item" style="transition-delay:.24s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" />
+              </svg></div>
+            <div class="check-text dark-t">Every container thoroughly tested prior to export</div>
+          </div>
+          <div class="check-item" style="transition-delay:.32s">
+            <div class="check-icon"><svg viewBox="0 0 12 10">
+                <path d="M1 5l3 3 7-7" />
+              </svg></div>
+            <div class="check-text dark-t">Retained samples archived for 2 years for full traceability</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTING CARDS -->
+  <section class="testing-section">
+    <div class="testing-inner">
+      <div class="testing-header">
+        <div>
+          <p class="t-tag reveal">Our Lab Tests</p>
+          <h2 class="t-heading reveal">What We <em>Test</em></h2>
+        </div>
+        <p class="t-sub reveal">Every product batch is tested against international standards before release — no
+          exceptions, no shortcuts.</p>
+      </div>
+      <div class="testing-grid">
+        <div class="test-card" style="transition-delay:.00s">
+          <div class="test-num">01</div>
+          <div class="test-icon"><svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+            </svg></div>
+          <div class="test-title">Sensory Analysis</div>
+          <div class="test-body">Visual, olfactory and taste inspection by trained specialists on every incoming batch.
+            Colour, texture, aroma and appearance are graded against reference standards.</div>
+        </div>
+        <div class="test-card" style="transition-delay:.06s">
+          <div class="test-num">02</div>
+          <div class="test-icon"><svg viewBox="0 0 24 24">
+              <path d="M19.5 5.5l-8-2-8 2V19l8 2 8-2V5.5zm-8 14l-6-1.5V7l6-1.5v14zm8-1.5l-6 1.5V5.5l6 1.5v12.5z" />
+            </svg></div>
+          <div class="test-title">Pesticide Residues</div>
+          <div class="test-body">Full multi-residue pesticide screening by accredited external laboratories. Results
+            must meet EU MRL (Maximum Residue Level) limits and organic certification standards.</div>
+        </div>
+        <div class="test-card" style="transition-delay:.12s">
+          <div class="test-num">03</div>
+          <div class="test-icon"><svg viewBox="0 0 24 24">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
+            </svg></div>
+          <div class="test-title">Microbiology</div>
+          <div class="test-body">Total plate count, yeast &amp; mould, Salmonella, E. coli and other pathogens — all
+            tested to international food safety limits (FSSC 22000, ISO 22000).</div>
+        </div>
+        <div class="test-card" style="transition-delay:.18s">
+          <div class="test-num">04</div>
+          <div class="test-icon"><svg viewBox="0 0 24 24">
+              <path d="M17 8C8 10 5.9 16.17 3.82 21h2.29c.3-.78 1.25-2 2.89-3 2.54-1.49 4.39-1.99 6-2.5V8z" />
+            </svg></div>
+          <div class="test-title">Moisture &amp; Ash</div>
+          <div class="test-body">Precise moisture content and total ash measurements ensure correct drying and purity
+            levels — critical for shelf life, weight accuracy and customer specification compliance.</div>
+        </div>
+        <div class="test-card" style="transition-delay:.24s">
+          <div class="test-num">05</div>
+          <div class="test-icon"><svg viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
+            </svg></div>
+          <div class="test-title">Foreign Body Detection</div>
+          <div class="test-body">Metal detection on every finished product line. Optical sorting catches colour-variant
+            foreign material. Sieve analysis confirms particle size distribution.</div>
+        </div>
+        <div class="test-card" style="transition-delay:.30s">
+          <div class="test-num">06</div>
+          <div class="test-icon"><svg viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg></div>
+          <div class="test-title">Traceability Archive</div>
+          <div class="test-body">Retained samples from every batch and container are stored for 2 years. Dispatch
+            records link each shipment to its test certificates — full chain-of-custody documentation available on
+            request.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <span class="cta-label">Confidence in every kilogram</span>
+    <h2 class="cta-heading">Quality You Can<br><em>Count On</em></h2>
+    <div class="cta-actions">
+      <a href="certificates.html" class="btn-primary">View Certifications</a>
+      <a href="index.html#contact" class="btn-ghost">Request Samples</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">SAFE HERBS <span>&amp; SPICES</span></div>
+        <p>Premium dried herbs, spices &amp; seeds from Egypt's certified organic farms — processed with world-class
+          standards and exported globally.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4><a href="herbs.html">Herbs &amp; Infusion</a><a href="#">Seeds</a><a href="#">Onion &amp;
+          Garlic</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4><a href="#">About Us</a><a href="farms.html">Our Farms</a><a href="quality.html">Quality</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4><a href="certificates.html">Certificates</a><a href="#">Get in Touch</a><a href="#">Privacy
+          Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2024 Safe Herbs &amp; Spices Co. — Fayoum,
+        Egypt</span><span>safeherbsco.com</span></div>
+  </footer>
+
+
+  <script src="js/quality.js"></script>
+</body>
+
+</html>
