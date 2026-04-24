@@ -1,20 +1,13 @@
-/* ── CURSOR ── */
-const $cur = document.getElementById('cur'), $ring = document.getElementById('cur-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-(function cl() { rx += (mx - rx) * .12; ry += (my - ry) * .12; $cur.style.left = mx + 'px'; $cur.style.top = my + 'px'; $ring.style.left = rx + 'px'; $ring.style.top = ry + 'px'; requestAnimationFrame(cl); })();
-document.querySelectorAll('a,button').forEach(el => {
-    el.addEventListener('mouseenter', () => { $cur.style.width = $cur.style.height = '16px'; $ring.style.width = $ring.style.height = '56px'; });
-    el.addEventListener('mouseleave', () => { $cur.style.width = $cur.style.height = '8px'; $ring.style.width = $ring.style.height = '36px'; });
-});
+'use strict';
 
-/* ── NAV ── */
-window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+// Shared utilities provided by js/pageUtils.js — must be loaded before this script.
 
-/* ── HAMBURGER ── */
-let menuOpen = false;
-function toggleMenu() { menuOpen = !menuOpen; document.getElementById('mobileMenu').classList.toggle('open', menuOpen); const [s0, s1, s2] = document.querySelectorAll('.hamburger span'); s0.style.transform = menuOpen ? 'rotate(45deg) translate(4px,4px)' : ''; s1.style.opacity = menuOpen ? '0' : '1'; s2.style.transform = menuOpen ? 'rotate(-45deg) translate(4px,-4px)' : ''; }
-function closeMobile() { menuOpen = false; document.getElementById('mobileMenu').classList.remove('open'); document.querySelectorAll('.hamburger span').forEach(s => { s.style.transform = ''; s.style.opacity = '1'; }); }
+PageUtils.initCursor(['a', 'button']);
+PageUtils.initNavScroll();
+PageUtils.initHamburger();
+
+// Alias pageUtils.syncCanvas so existing canvas code below needs no changes
+const sync = PageUtils.syncCanvas;
 
 /* ── SCROLL TO SECTION ── */
 function scrollToSection(id) {
@@ -53,13 +46,7 @@ window.addEventListener('scroll', () => {
 
 }, { passive: true });
 
-/* ── CANVAS SYNC ── */
-function sync(c) {
-    const dpr = window.devicePixelRatio || 1, r = c.getBoundingClientRect();
-    const cw = Math.round(r.width * dpr), ch = Math.round(r.height * dpr);
-    if (c.width === cw && c.height === ch) return;
-    c.width = cw; c.height = ch; c.getContext('2d').scale(dpr, dpr);
-}
+
 
 /* ════════════════════════════════════
    HERO CANVAS — aerial farm view
@@ -264,3 +251,12 @@ HERB_PALETTES.forEach((pal, idx) => {
 function ctx_grad(ctx, W, H, c1, c2) {
     const g = ctx.createLinearGradient(0, 0, W, H); g.addColorStop(0, c1); g.addColorStop(1, c2); return g;
 }
+/* ── SET NAV HEIGHT AS CSS VARIABLE ── */
+function setNavHeight() {
+    const nav = document.getElementById('navbar');
+    if (nav) {
+        document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+    }
+}
+setNavHeight();
+window.addEventListener('resize', setNavHeight);

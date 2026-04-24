@@ -1,6 +1,7 @@
 [build]
   publish = "."
 
+# ─── CACHE HEADERS ───────────────────────────────────────
 [[headers]]
   for = "/css/*"
   [headers.values]
@@ -12,37 +13,76 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/index.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
   for = "/image/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# No-cache for all HTML pages (SEO content changes frequently)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+    Content-Type  = "application/xml; charset=utf-8"
+
+# ─── SECURITY HEADERS (improve SEO trust signals) ─────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+    Permissions-Policy     = "camera=(), microphone=(), geolocation=()"
+
+# ─── REDIRECTS (slug → real pages) ───────────────────────
 [[redirects]]
-  from = "/about"
-  to = "/index.html"
+  from   = "/about"
+  to     = "/our_story.html"
   status = 200
 
 [[redirects]]
-  from = "/products"
-  to = "/index.html"
+  from   = "/products"
+  to     = "/safeherbs-products.html"
   status = 200
 
 [[redirects]]
-  from = "/farms"
-  to = "/index.html"
+  from   = "/export"
+  to     = "/export-services.html"
   status = 200
 
 [[redirects]]
-  from = "/certificates"
-  to = "/index.html"
+  from   = "/export-services"
+  to     = "/export-services.html"
   status = 200
 
 [[redirects]]
-  from = "/contact"
-  to = "/index.html"
+  from   = "/farms"
+  to     = "/farms.html"
   status = 200
+
+[[redirects]]
+  from   = "/certificates"
+  to     = "/certificates.html"
+  status = 200
+
+[[redirects]]
+  from   = "/contact"
+  to     = "/contactUs.html"
+  status = 200
+
+[[redirects]]
+  from   = "/quality"
+  to     = "/quality.html"
+  status = 200
+
+# Legacy slug that pointed to index — redirect properly now
+[[redirects]]
+  from   = "/index.html"
+  to     = "/"
+  status = 301
+
 

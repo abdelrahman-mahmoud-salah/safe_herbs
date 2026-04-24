@@ -4,7 +4,7 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 body{background:var(--charcoal);color:var(--cream);font-family:var(--body);font-weight:300;cursor:none;overflow-x:hidden}
 #cur,#cur-ring{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);will-change:left,top}
 #cur{width:8px;height:8px;background:var(--gold);transition:width .2s,height .2s}
-#cur-ring{width:36px;height:36px;border:1px solid rgba(200,160,82,.4);transition:width .3s,height .3s}
+#cur-ring{width:36px;height:36px;border:1px solid rgba(200,160,82,.45);transition:width .3s,height .3s}
 nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:22px 52px;transition:background .4s,padding .4s}
 nav.scrolled{background:rgba(20,30,16,.95);backdrop-filter:blur(14px);padding:14px 52px;border-bottom:1px solid rgba(200,160,82,.15)}
 .nav-logo{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:3px;color:var(--cream);text-decoration:none}

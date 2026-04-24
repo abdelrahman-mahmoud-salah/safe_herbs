@@ -5,13 +5,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="image/icon.jpg" sizes="any">
   <link rel="dns-prefetch" href="//safeherbsco.com">
   <link rel="preconnect" href="https://safeherbsco.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <title>Products — Safe Herbs &amp; Spices</title>
-  <link
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- ═══ SEO: Title & Meta ═══ -->
+  <title>Organic Herbs, Spices &amp; Seeds — Product Catalogue</title>
+  <meta name="description" content="Browse our full export catalogue: chamomile, cumin, coriander, fenugreek, peppermint, garlic &amp; more. All EU Organic certified. B2B wholesale pricing available on request.">
+  <meta name="keywords" content="organic chamomile wholesale, bulk cumin seeds Egypt, coriander seeds exporter, fenugreek wholesale, dried herbs B2B, sesame seeds organic, hibiscus bulk supplier">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://safeherbsco.com/safeherbs-products.html">
+
+  <!-- ═══ SEO: Open Graph ═══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://safeherbsco.com/safeherbs-products.html">
+  <meta property="og:title" content="Organic Herbs, Spices &amp; Seeds — Export Catalogue">
+  <meta property="og:description" content="26 varieties of EU Organic certified herbs, seeds, and dehydrated vegetables grown on Egyptian farms. B2B wholesale pricing available.">
+  <meta property="og:image" content="https://safeherbsco.com/image/icon.webp">
+  <meta property="og:site_name" content="Safe Herbs &amp; Spices Co.">
+
+  <!-- ═══ SEO: Product Collection Schema ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Safe Herbs & Spices — Organic Export Product Catalogue",
+    "url": "https://safeherbsco.com/safeherbs-products.html",
+    "description": "26 varieties of EU Organic, USDA NOP, and Fairtrade certified herbs, seeds, and dehydrated vegetables for bulk export from Egypt.",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Chamomile (Matricaria chamomilla L.) — Dried, Organic, NOP" },
+      { "@type": "ListItem", "position": 2, "name": "Peppermint (Mentha piperita) — Cut & Sifted, Fairtrade" },
+      { "@type": "ListItem", "position": 3, "name": "Spearmint (Mentha spicata) — Dried, Organic" },
+      { "@type": "ListItem", "position": 4, "name": "Hibiscus (Hibiscus sabdariffa) — Whole Flower, NOP" },
+      { "@type": "ListItem", "position": 5, "name": "Rosemary (Salvia rosmarinus) — Dried, Organic" },
+      { "@type": "ListItem", "position": 6, "name": "Cumin Seeds (Cuminum cyminum) — Whole, Fairtrade" },
+      { "@type": "ListItem", "position": 7, "name": "Coriander Seeds (Coriandrum sativum) — Whole, Organic" },
+      { "@type": "ListItem", "position": 8, "name": "Fennel (Foeniculum Vulgare) — Whole, Organic" },
+      { "@type": "ListItem", "position": 9, "name": "Fenugreek (Trigonella foenum-graecum) — Whole, Fairtrade" },
+      { "@type": "ListItem", "position": 10, "name": "Nigella / Black Seed (Nigella Sativa) — Whole, Organic" },
+      { "@type": "ListItem", "position": 11, "name": "White Sesame (Sesamum indicum) — Hulled, Fairtrade" },
+      { "@type": "ListItem", "position": 12, "name": "Anise Seeds — Whole, Organic" },
+      { "@type": "ListItem", "position": 13, "name": "Caraway (Carum Carvi) — Whole, Fairtrade" },
+      { "@type": "ListItem", "position": 14, "name": "Garlic (Allium sativum) — Dehydrated Flakes, Powder, Granules" },
+      { "@type": "ListItem", "position": 15, "name": "Onion (Allium cepa) — Dehydrated Sliced, Powder, Minced" }
+    ]
+  }
+  </script>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap"
-    rel="stylesheet">
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap">
+  </noscript>
   <link rel="stylesheet" href="css/products.css">
 </head>
 
@@ -19,13 +69,8 @@
   <div id="cur"></div>
   <div id="cur-ring"></div>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" onclick="closeMobile()">Home</a>
-    <a href="products.html" onclick="closeMobile()">Products</a>
-    <a href="farms.html" onclick="closeMobile()">Farms</a>
-    <a href="certificates.html" onclick="closeMobile()">Certificates</a>
-    <a href="contact.html" onclick="closeMobile()">Contact</a>
-  </div>
+  <!-- Mobile menu injected by mobileMenu.js -->
+  <div id="mobile-menu-container"></div>
 
   <nav id="navbar">
     <a href="index.html" class="nav-logo">SAFE HERBS <span>&amp; SPICES</span></a>
@@ -529,30 +574,13 @@
     </div>
   </section>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="footer-logo">SAFE HERBS <span>&amp; SPICES</span></div>
-        <p>Premium dried herbs, spices &amp; seeds from Egypt's certified organic farms — exported globally since 1942.
-        </p>
-      </div>
-      <div class="footer-col">
-        <h4>Products</h4><a href="#herbs">Herbs &amp; Infusion</a><a href="#seeds">Seeds</a><a href="#oniongarlic">Onion
-          &amp; Garlic</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4><a href="about.html">About Us</a><a href="farms.html">Our Farms</a><a
-          href="quality.html">Quality</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4><a href="certificates.html">Certificates</a><a href="contact.html">Get in Touch</a>
-      </div>
-    </div>
-    <div class="footer-bottom"><span>© 2024 Safe Herbs &amp; Spices Co. — Fayoum,
-        Egypt</span><span>safeherbsco.com</span></div>
-  </footer>
+  <!-- Footer injected by footer.js -->
+  <div id="footer-container"></div>
 
+  <script src="js/pageUtils.js"></script>
+  <script src="js/mobileMenu.js"></script>
   <script src="js/product.js"></script>
+  <script src="js/footer.js"></script>
 </body>
 
 </html>

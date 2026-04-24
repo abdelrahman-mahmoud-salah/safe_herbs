@@ -1,46 +1,14 @@
 'use strict';
 
-/* ── CURSOR ── */
-const $cur = document.getElementById('cur'),
-  $ring = document.getElementById('cur-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-(function loop() { rx += (mx - rx) * .12; ry += (my - ry) * .12; $cur.style.transform = `translate3d(${mx}px, ${my}px, 0)`; $ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`; requestAnimationFrame(loop); })();
-document.querySelectorAll('a,button,.herb-card').forEach(el => {
-  el.addEventListener('mouseenter', () => { $cur.style.width = $cur.style.height = '16px'; $ring.style.width = $ring.style.height = '56px'; });
-  el.addEventListener('mouseleave', () => { $cur.style.width = $cur.style.height = '8px'; $ring.style.width = $ring.style.height = '36px'; });
-});
+// Shared utilities provided by js/pageUtils.js — must be loaded before this script.
 
-/* ── NAV ── */
-window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+PageUtils.initCursor(['a', 'button', '.herb-card']);
+PageUtils.initNavScroll();
+PageUtils.initHamburger();
+PageUtils.initReveal('.reveal, .reveal-left, .reveal-right, .step, .q-item', 0.1);
 
-/* ── HAMBURGER ── */
-let menuOpen = false;
-function toggleMenu() {
-  menuOpen = !menuOpen;
-  document.getElementById('mobileMenu').classList.toggle('open', menuOpen);
-  const [s0, s1, s2] = document.querySelectorAll('.hamburger span');
-  s0.style.transform = menuOpen ? 'rotate(45deg) translate(4px,4px)' : '';
-  s1.style.opacity = menuOpen ? '0' : '1';
-  s2.style.transform = menuOpen ? 'rotate(-45deg) translate(4px,-4px)' : '';
-}
-function closeMobile() {
-  menuOpen = false;
-  document.getElementById('mobileMenu').classList.remove('open');
-  document.querySelectorAll('.hamburger span').forEach(s => { s.style.transform = ''; s.style.opacity = '1'; });
-}
-
-/* ── REVEAL ── */
-const revealIO = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: .1 });
-document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.step,.q-item').forEach(el => revealIO.observe(el));
-
-/* ── CANVAS SYNC ── */
-function sync(c) {
-  const dpr = window.devicePixelRatio || 1, r = c.getBoundingClientRect();
-  const cw = Math.round(r.width * dpr), ch = Math.round(r.height * dpr);
-  if (c.width === cw && c.height === ch) return;
-  c.width = cw; c.height = ch; c.getContext('2d').scale(dpr, dpr);
-}
+// Alias pageUtils.syncCanvas so existing canvas code below needs no changes
+const sync = PageUtils.syncCanvas;
 
 /* ══════════════════════════════════════════════════════════
    HERO CANVAS

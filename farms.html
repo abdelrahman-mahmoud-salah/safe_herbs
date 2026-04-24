@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Farms — Safe Herbs &amp; Spices</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="image/icon.jpg" sizes="any">
 
-<link rel="stylesheet" href="css/farms.css">
+  <!-- ═══ SEO: Title & Meta ═══ -->
+  <title>Organic Herb Farms in Egypt — 1,060+ Hectares, 6 Regions</title>
+  <meta name="description" content="Safe Herbs &amp; Spices operates 1,060+ hectares of certified organic farms across Fayoum, Beni Suef, Al Minia, Assuit, Luxor &amp; Al Wahat — the source of our premium herbs and spices.">
+  <meta name="keywords" content="organic herb farm Egypt, chamomile farm Fayoum, certified organic farms Egypt, bulk chamomile wholesale Fayoum, Egyptian organic farms herbs spices, herb farm Nile valley">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://safeherbsco.com/farms.html">
+
+  <!-- ═══ SEO: Open Graph ═══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://safeherbsco.com/farms.html">
+  <meta property="og:title" content="Organic Herb Farms in Egypt — 1,060+ Hectares, 6 Regions">
+  <meta property="og:description" content="Explore our 12 certified organic farms across 6 Egyptian governorates. Each individually certified — the origin of every herb and spice we export.">
+  <meta property="og:image" content="https://safeherbsco.com/image/icon.webp">
+  <meta property="og:site_name" content="Safe Herbs &amp; Spices Co.">
+
+  <!-- ═══ SEO: Farm Schema ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Organic Herb Farms in Egypt — Safe Herbs & Spices",
+    "url": "https://safeherbsco.com/farms.html",
+    "description": "1,060+ hectares of certified organic farmland across 6 Egyptian governorates, cultivated by Safe Herbs & Spices Co.",
+    "about": [
+      { "@type": "Place", "name": "Fayoum Organic Farms", "address": { "@type": "PostalAddress", "addressRegion": "Fayoum", "addressCountry": "EG" }, "description": "195 hectares, organic since 2005. Primary hub for chamomile, coriander, fennel, sesame." },
+      { "@type": "Place", "name": "Beni Suef Organic Farms", "address": { "@type": "PostalAddress", "addressRegion": "Beni Suef", "addressCountry": "EG" }, "description": "213 hectares across 9 farms, organic since 2008." },
+      { "@type": "Place", "name": "Al Minia Farm (Menya)", "address": { "@type": "PostalAddress", "addressRegion": "Al Minia", "addressCountry": "EG" }, "description": "100+ hectares of reclaimed desert, organic since 2020." }
+    ],
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeherbsco.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Our Farms", "item": "https://safeherbsco.com/farms.html" }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap">
+  </noscript>
+
+  <link rel="preload" href="css/farms.css" as="style">
+  <link rel="stylesheet" href="css/farms.css">
 </head>
 <body>
 
@@ -14,15 +67,8 @@
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html"         onclick="closeMobile()">Home</a>
-  <a href="index.html#about"   onclick="closeMobile()">About</a>
-  <a href="index.html#products"onclick="closeMobile()">Products</a>
-  <a href="farms.html"         onclick="closeMobile()">Farms</a>
-  <a href="certificates.html"  onclick="closeMobile()">Certificates</a>
-  <a href="index.html#contact" onclick="closeMobile()">Contact</a>
-</div>
+<!-- MOBILE MENU (injected via mobileMenu.js) -->
+<div id="mobile-menu-container"></div>
 
 <!-- NAV -->
 <nav id="navbar">
@@ -75,7 +121,7 @@
 <!-- STATS ROW -->
 <div class="stats-row">
   <div class="stats-inner">
-    <div class="stat-item"                       ><div class="stat-num">1060<span>+</span></div><div class="stat-lbl">Total Hectares</div></div>
+    <div class="stat-item">                         <div class="stat-num">1060<span>+</span></div><div class="stat-lbl">Total Hectares</div></div>
     <div class="stat-item" style="transition-delay:.06s"><div class="stat-num">6<span></span></div><div class="stat-lbl">Farm Regions</div></div>
     <div class="stat-item" style="transition-delay:.12s"><div class="stat-num">12<span>+</span></div><div class="stat-lbl">Certified Farms</div></div>
     <div class="stat-item" style="transition-delay:.18s"><div class="stat-num">2005<span></span></div><div class="stat-lbl">First Organic Year</div></div>
@@ -111,7 +157,7 @@
   <div class="farm-block layout-left reveal">
     <div class="farm-visual">
       <div class="farm-canvas-wrap">
-         <img class="farm-img" src="image/fay.webp" alt="fayoum farms">
+        <img class="farm-img" src="image/fay.webp" alt="Fayoum organic farm fields" loading="lazy" decoding="async">
         <div class="farm-num-badge">01</div>
         <div class="farm-area-badge"><div class="area-num">195</div><div class="area-lbl">Hectares</div></div>
       </div>
@@ -152,7 +198,7 @@
   <div class="farm-block layout-right reveal">
     <div class="farm-visual">
       <div class="farm-canvas-wrap">
-            <img class="farm-img" src="image/bani_3.webp" alt="fayoum farms">
+        <img class="farm-img" src="image/bani_3.webp" alt="Beni Suef farm fields" loading="lazy" decoding="async">
         <div class="farm-num-badge">02</div>
         <div class="farm-area-badge"><div class="area-num">213</div><div class="area-lbl">Hectares</div></div>
       </div>
@@ -195,7 +241,7 @@
   <div class="farm-block layout-left reveal">
     <div class="farm-visual">
       <div class="farm-canvas-wrap">
-          <img class="farm-img" src="image/menya_2.webp" alt="fayoum farms">
+        <img class="farm-img" src="image/menya_2.webp" alt="Al Minia reclaimed desert farm" loading="lazy" decoding="async">
         <div class="farm-num-badge">03</div>
         <div class="farm-area-badge"><div class="area-num">100<span style="font-size:18px">+</span></div><div class="area-lbl">Hectares</div></div>
       </div>
@@ -237,7 +283,7 @@
   <div class="farm-block layout-right reveal">
     <div class="farm-visual">
       <div class="farm-canvas-wrap">
-            <img class="farm-img" src="image/f4.webp" alt="fayoum farms">
+        <img class="farm-img" src="image/f4.webp" alt="Assuit Nile floodplain farm" loading="lazy" decoding="async">
         <div class="farm-num-badge">04</div>
         <div class="farm-area-badge"><div class="area-num">84</div><div class="area-lbl">Hectares</div></div>
       </div>
@@ -295,9 +341,7 @@
           <div class="meta-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21h2.29c.3-.78 1.25-2 2.89-3 2.54-1.49 4.39-1.99 6-2.5V8z"/></svg></div>
           <span class="meta-label">Main Crops</span>
           <span class="meta-value" style="flex:1">
-            <div class="crops-list">
-              <span class="crop-chip">Hibiscus</span>
-            </div>
+            <div class="crops-list"><span class="crop-chip">Hibiscus</span></div>
           </span>
         </div>
       </div>
@@ -311,7 +355,7 @@
   <div class="farm-block layout-right reveal">
     <div class="farm-visual">
       <div class="farm-canvas-wrap">
-           <img class="farm-img" src="image/wahat.webp" alt="fayoum farms">
+        <img class="farm-img" src="image/wahat.webp" alt="Al Wahat desert farm" loading="lazy" decoding="async">
         <div class="farm-num-badge">06</div>
         <div class="farm-area-badge"><div class="area-num">50<span style="font-size:18px">+</span></div><div class="area-lbl">Hectares</div></div>
       </div>
@@ -393,40 +437,12 @@
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo">SAFE HERBS <span>&amp; SPICES</span></div>
-      <p>Premium dried herbs, spices &amp; seeds from Egypt's certified organic farms — processed with world-class standards and exported globally.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Products</h4>
-      <a href="#">Herbs &amp; Infusion</a>
-      <a href="#">Seeds</a>
-      <a href="#">Onion &amp; Garlic</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="#">About Us</a>
-      <a href="farms.html">Our Farms</a>
-      <a href="#">Quality</a>
-      <a href="#">Societal Life</a>
-    </div>
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <a href="certificates.html">Certificates</a>
-      <a href="#">Get in Touch</a>
-      <a href="#">Privacy Policy</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2024 Safe Herbs &amp; Spices Co. — Fayoum, Egypt</span>
-    <span>safeherbsco.com</span>
-  </div>
-</footer>
+<!-- FOOTER (injected by footer.js) -->
+<div id="footer-container"></div>
 
-
+<script src="js/pageUtils.js"></script>
+<script src="js/mobileMenu.js"></script>
 <script src="js/farms.js"></script>
+<script src="js/footer.js"></script>
 </body>
 </html>

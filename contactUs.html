@@ -4,10 +4,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get In Touch — Safe Herbs &amp; Spices</title>
-  <link
+  <link rel="icon" href="image/icon.jpg" sizes="any">
+
+  <!-- ═══ SEO: Title & Meta ═══ -->
+  <title>Contact Safe Herbs &amp; Spices — Get a Quote</title>
+  <meta name="description" content="Ready to source premium organic herbs and spices? Contact our export team in Fayoum, Egypt for wholesale pricing, MOQ details, and free product samples.">
+  <meta name="keywords" content="contact herbs spices exporter Egypt, wholesale herb quote, organic spice supplier contact, request sample herbs Egypt, B2B herb supplier enquiry">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://safeherbsco.com/contactUs.html">
+
+  <!-- ═══ SEO: Open Graph ═══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://safeherbsco.com/contactUs.html">
+  <meta property="og:title" content="Contact Safe Herbs &amp; Spices — Request a Wholesale Quote">
+  <meta property="og:description" content="Contact our export team for wholesale pricing, MOQ details, and free product samples. We reply within 24 hours.">
+  <meta property="og:image" content="https://safeherbsco.com/image/icon.webp">
+  <meta property="og:site_name" content="Safe Herbs &amp; Spices Co.">
+
+  <!-- ═══ SEO: ContactPage Schema ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Safe Herbs & Spices — Get a Quote",
+    "url": "https://safeherbsco.com/contactUs.html",
+    "description": "Contact Safe Herbs & Spices Co. for wholesale pricing, export enquiries, and sample requests.",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Safe Herbs & Spices Co.",
+      "url": "https://safeherbsco.com",
+      "image": "https://safeherbsco.com/image/icon.webp",
+      "telephone": ["+20-115-929-5447", "+20-114-567-0606"],
+      "email": "info@safeherbsco.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Al Horrya St. 4, Sakaran",
+        "addressLocality": "Fayoum",
+        "postalCode": "63622",
+        "addressCountry": "EG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 29.3084,
+        "longitude": 30.8428
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Sunday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    }
+  }
+  </script>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap"
-    rel="stylesheet">
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap">
+  </noscript>
 
   <link rel="stylesheet" href="css/contactUs.css">
 </head>
@@ -15,13 +77,8 @@
 <body>
   <div id="cur"></div>
   <div id="cur-ring"></div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" onclick="closeMobile()">Home</a>
-    <a href="about.html" onclick="closeMobile()">About</a>
-    <a href="herbs.html" onclick="closeMobile()">Products</a>
-    <a href="farms.html" onclick="closeMobile()">Farms</a>
-    <a href="certificates.html" onclick="closeMobile()">Certificates</a>
-  </div>
+  <!-- Mobile menu injected by mobileMenu.js -->
+  <div id="mobile-menu-container"></div>
   <nav id="navbar">
     <a href="index.html" class="nav-logo">SAFE HERBS <span>&amp; SPICES</span></a>
     <ul class="nav-links">
@@ -192,31 +249,13 @@
     </div>
   </div>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="footer-logo">SAFE HERBS <span>&amp; SPICES</span></div>
-        <p>Premium dried herbs, spices &amp; seeds from Egypt's certified organic farms — processed with world-class
-          standards and exported globally.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Products</h4><a href="herbs.html">Herbs &amp; Infusion</a><a href="#">Seeds</a><a href="#">Onion &amp;
-          Garlic</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4><a href="about.html">About Us</a><a href="farms.html">Our Farms</a><a
-          href="quality.html">Quality</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4><a href="certificates.html">Certificates</a><a href="contact.html">Get in Touch</a>
-      </div>
-    </div>
-    <div class="footer-bottom"><span>© 2024 Safe Herbs &amp; Spices Co. — Fayoum,
-        Egypt</span><span>safeherbsco.com</span></div>
-  </footer>
+  <!-- Footer injected by footer.js -->
+  <div id="footer-container"></div>
 
-
+  <script src="js/pageUtils.js"></script>
+  <script src="js/mobileMenu.js"></script>
   <script src="js/contactUs.js"></script>
+  <script src="js/footer.js"></script>
 </body>
 
 </html>
