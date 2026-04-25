@@ -1,28 +1,12 @@
-# ═══════════════════════════════════════════════════
+# ═══════════════════════════════════════
 # robots.txt — Safe Herbs & Spices Co.
 # https://safeherbsco.com
-# ═══════════════════════════════════════════════════
+# ═══════════════════════════════════════
 
 User-agent: *
 Allow: /
 
-# Allow all major search engine bots explicitly
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: facebot
-Allow: /
-
-# Block nuisance scrapers
+# Block known heavy scrapers (optional)
 User-agent: AhrefsBot
 Disallow: /
 
@@ -32,5 +16,5 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
-# Sitemap location (submit this URL to Google Search Console too)
+# Sitemap
 Sitemap: https://safeherbsco.com/sitemap.xml

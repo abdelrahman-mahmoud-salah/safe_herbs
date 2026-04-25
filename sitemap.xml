@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Home -->
+  <!-- ================= HOME ================= -->
   <url>
     <loc>https://safeherbsco.com/</loc>
     <lastmod>2026-04-24</lastmod>
@@ -10,7 +10,7 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- About / Our Story -->
+  <!-- ================= ABOUT ================= -->
   <url>
     <loc>https://safeherbsco.com/our_story.html</loc>
     <lastmod>2026-04-24</lastmod>
@@ -18,15 +18,52 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Products -->
+  <!-- ================= PRODUCTS MAIN ================= -->
   <url>
     <loc>https://safeherbsco.com/safeherbs-products.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- ================= PRODUCT PAGES (NEW 🔥 IMPORTANT) ================= -->
+
+  <url>
+    <loc>https://safeherbsco.com/chamomile-egypt-supplier.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Export Services (NEW — highest B2B commercial intent) -->
+  <url>
+    <loc>https://safeherbsco.com/peppermint-wholesale-egypt.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://safeherbsco.com/cumin-seeds-exporter-egypt.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://safeherbsco.com/sesame-seeds-bulk-egypt.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://safeherbsco.com/garlic-onion-dehydrated-egypt.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ================= EXPORT SERVICES ================= -->
   <url>
     <loc>https://safeherbsco.com/export-services.html</loc>
     <lastmod>2026-04-24</lastmod>
@@ -34,7 +71,7 @@
     <priority>0.95</priority>
   </url>
 
-  <!-- Farms -->
+  <!-- ================= FARMS ================= -->
   <url>
     <loc>https://safeherbsco.com/farms.html</loc>
     <lastmod>2026-04-24</lastmod>
@@ -42,15 +79,15 @@
     <priority>0.75</priority>
   </url>
 
-  <!-- Certifications -->
+  <!-- ================= CERTIFICATIONS ================= -->
   <url>
     <loc>https://safeherbsco.com/certificates.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
 
-  <!-- Quality -->
+  <!-- ================= QUALITY ================= -->
   <url>
     <loc>https://safeherbsco.com/quality.html</loc>
     <lastmod>2026-04-24</lastmod>
@@ -58,7 +95,30 @@
     <priority>0.65</priority>
   </url>
 
-  <!-- Contact -->
+  <!-- ================= BLOG (🔥 NEW IMPORTANT SEO LAYER) ================= -->
+
+  <url>
+    <loc>https://safeherbsco.com/blog/chamomile-export-egypt.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://safeherbsco.com/blog/how-to-import-herbs-from-egypt.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://safeherbsco.com/blog/cumin-seeds-market-europe.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ================= CONTACT ================= -->
   <url>
     <loc>https://safeherbsco.com/contactUs.html</loc>
     <lastmod>2026-04-24</lastmod>
@@ -66,7 +126,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Societal Life -->
+  <!-- ================= SOCIETY ================= -->
   <url>
     <loc>https://safeherbsco.com/societal.html</loc>
     <lastmod>2026-04-24</lastmod>

@@ -67,15 +67,25 @@ body.effects-pointer {
 #cur {
   width: 8px;
   height: 8px;
-  background: rgba(200,160,82,.45);
+  background: rgba(200, 160, 82, .45);
   transition: width 0.2s, height 0.2s;
 }
 
 #cur-ring {
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(200,160,82,.45);
+  border: 1px solid rgba(200, 160, 82, .45);
   transition: width 0.3s, height 0.3s;
+}
+
+#ring_image {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #7F77DD;
+  box-shadow: 0 0 0 4px #EEEDFE;
+  height: 30px;
+  width: 30px;
+
 }
 
 /* ── ERROR BANNER ── */
@@ -722,6 +732,7 @@ html.no-effects .scroll-line {
   font-style: italic;
   color: var(--sage-dark);
 }
+
 
 .section-body {
   font-size: 15px;
@@ -1897,4 +1908,30 @@ footer .footer-bottom.reveal {
   .footer-inner {
     grid-template-columns: 1fr;
   }
+}
+
+.video-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.video-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+      rgba(255, 180, 50, 0.25),
+      /* ذهبي */
+      rgba(255, 100, 50, 0.20),
+      /* برتقالي */
+      rgba(180, 80, 200, 0.20)
+      /* بنفسجي */
+    );
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+video {
+  display: block;
+  animation: fadeLoop 3s ease-in-out infinite;
 }

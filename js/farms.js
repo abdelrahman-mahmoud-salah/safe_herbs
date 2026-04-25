@@ -13,75 +13,75 @@ const { syncCanvas, createVisibilityLoop } = PageUtils;
 /* ════════════════════════════════════════
    HERO CANVAS — aerial field view
 ════════════════════════════════════════ */
-(function initHero() {
-  const canvas = document.getElementById('hero-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let t = 0;
+// (function initHero() {
+//   const canvas = document.getElementById('hero-canvas');
+//   if (!canvas) return;
+//   const ctx = canvas.getContext('2d');
+//   let t = 0;
 
-  const ROWS = 28;
-  const COLORS = ['#2a4a20', '#305428', '#244018', '#3a5c2a', '#1e3614'];
+//   const ROWS = 28;
+//   const COLORS = ['#2a4a20', '#305428', '#244018', '#3a5c2a', '#1e3614'];
 
-  function draw() {
-    t += 0.004;
-    syncCanvas(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
-    ctx.clearRect(0, 0, W, H);
+//   function draw() {
+//     t += 0.004;
+//     syncCanvas(canvas);
+//     const W = canvas.offsetWidth, H = canvas.offsetHeight;
+//     ctx.clearRect(0, 0, W, H);
 
-    // Sky gradient
-    const sky = ctx.createLinearGradient(0, 0, 0, H * 0.5);
-    sky.addColorStop(0, '#0e1c0a');
-    sky.addColorStop(1, '#1e3614');
-    ctx.fillStyle = sky;
-    ctx.fillRect(0, 0, W, H);
+//     // Sky gradient
+//     const sky = ctx.createLinearGradient(0, 0, 0, H * 0.5);
+//     sky.addColorStop(0, '#0e1c0a');
+//     sky.addColorStop(1, '#1e3614');
+//     ctx.fillStyle = sky;
+//     ctx.fillRect(0, 0, W, H);
 
-    // Aerial farm rows (perspective projection)
-    for (let i = 0; i < ROWS; i++) {
-      const y = H * 0.35 + (i / ROWS) * H * 0.65;
-      const wid = W * (0.1 + (i / ROWS) * 0.9);
-      const x0 = (W - wid) / 2;
-      const h = (H * 0.65 / ROWS) * 0.72;
-      const wave = Math.sin(t + i * 0.3) * (i / ROWS) * 6;
-      ctx.fillStyle = COLORS[i % COLORS.length];
-      ctx.globalAlpha = 0.55 + (i / ROWS) * 0.35;
-      ctx.beginPath();
-      ctx.moveTo(x0, y + wave);
-      ctx.lineTo(x0 + wid, y + wave);
-      ctx.lineTo(x0 + wid - wid * 0.02, y + h + wave);
-      ctx.lineTo(x0 + wid * 0.02, y + h + wave);
-      ctx.closePath();
-      ctx.fill();
-    }
-    ctx.globalAlpha = 1;
+//     // Aerial farm rows (perspective projection)
+//     for (let i = 0; i < ROWS; i++) {
+//       const y = H * 0.35 + (i / ROWS) * H * 0.65;
+//       const wid = W * (0.1 + (i / ROWS) * 0.9);
+//       const x0 = (W - wid) / 2;
+//       const h = (H * 0.65 / ROWS) * 0.72;
+//       const wave = Math.sin(t + i * 0.3) * (i / ROWS) * 6;
+//       ctx.fillStyle = COLORS[i % COLORS.length];
+//       ctx.globalAlpha = 0.55 + (i / ROWS) * 0.35;
+//       ctx.beginPath();
+//       ctx.moveTo(x0, y + wave);
+//       ctx.lineTo(x0 + wid, y + wave);
+//       ctx.lineTo(x0 + wid - wid * 0.02, y + h + wave);
+//       ctx.lineTo(x0 + wid * 0.02, y + h + wave);
+//       ctx.closePath();
+//       ctx.fill();
+//     }
+//     ctx.globalAlpha = 1;
 
-    // Nile canal
-    ctx.strokeStyle = 'rgba(60,130,180,.45)';
-    ctx.lineWidth = 3 + Math.sin(t * 0.5) * 0.5;
-    ctx.beginPath();
-    ctx.moveTo(W * 0.48, H * 0.35);
-    ctx.bezierCurveTo(W * 0.5, H * 0.55, W * 0.49, H * 0.72, W * 0.51, H);
-    ctx.stroke();
+//     // Nile canal
+//     ctx.strokeStyle = 'rgba(60,130,180,.45)';
+//     ctx.lineWidth = 3 + Math.sin(t * 0.5) * 0.5;
+//     ctx.beginPath();
+//     ctx.moveTo(W * 0.48, H * 0.35);
+//     ctx.bezierCurveTo(W * 0.5, H * 0.55, W * 0.49, H * 0.72, W * 0.51, H);
+//     ctx.stroke();
 
-    // Floating ambient particles
-    for (let i = 0; i < 20; i++) {
-      const px = W * (0.1 + ((i / 20 + t * 0.012) % 0.9));
-      const py = H * (0.15 + Math.sin(t * 0.4 + i * 0.8) * 0.08);
-      ctx.beginPath();
-      ctx.arc(px, py, 1.5, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(200,160,82,.5)';
-      ctx.fill();
-    }
+//     // Floating ambient particles
+//     for (let i = 0; i < 20; i++) {
+//       const px = W * (0.1 + ((i / 20 + t * 0.012) % 0.9));
+//       const py = H * (0.15 + Math.sin(t * 0.4 + i * 0.8) * 0.08);
+//       ctx.beginPath();
+//       ctx.arc(px, py, 1.5, 0, Math.PI * 2);
+//       ctx.fillStyle = 'rgba(200,160,82,.5)';
+//       ctx.fill();
+//     }
 
-    // Vignette
-    const vig = ctx.createRadialGradient(W * 0.5, H * 0.5, H * 0.2, W * 0.5, H * 0.5, H * 0.9);
-    vig.addColorStop(0, 'rgba(0,0,0,0)');
-    vig.addColorStop(1, 'rgba(0,0,0,.55)');
-    ctx.fillStyle = vig;
-    ctx.fillRect(0, 0, W, H);
-  }
+//     // Vignette
+//     const vig = ctx.createRadialGradient(W * 0.5, H * 0.5, H * 0.2, W * 0.5, H * 0.5, H * 0.9);
+//     vig.addColorStop(0, 'rgba(0,0,0,0)');
+//     vig.addColorStop(1, 'rgba(0,0,0,.55)');
+//     ctx.fillStyle = vig;
+//     ctx.fillRect(0, 0, W, H);
+//   }
 
-  createVisibilityLoop(canvas, draw);
-})();
+//   createVisibilityLoop(canvas, draw);
+// })();
 
 /* ════════════════════════════════════════
    MAP CANVAS — Egypt farm locations

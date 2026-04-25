@@ -10,8 +10,8 @@
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{background:var(--cream);color:var(--charcoal);font-family:var(--body);font-weight:300;cursor:none;overflow-x:hidden}
 #cur,#cur-ring{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);will-change:left,top}
-#cur{width:8px;height:8px;background:var(--sage-dark);transition:width .2s,height .2s}
-#cur-ring{width:36px;height:36px;border:1px solid rgba(61,92,61,.4);transition:width .3s,height .3s}
+#cur{width:8px;height:8px;background:rgba(200,160,82,.45);transition:width .2s,height .2s}
+#cur-ring{width:36px;height:36px;border:1px solidrgba(200,160,82,.45);transition:width .3s,height .3s}
 nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:22px 52px;transition:background .4s,padding .4s}
 nav.scrolled{background:rgba(245,240,232,.93);backdrop-filter:blur(14px);padding:14px 52px;border-bottom:1px solid rgba(107,140,107,.15)}
 .nav-logo{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:3px;color:var(--charcoal);text-decoration:none}

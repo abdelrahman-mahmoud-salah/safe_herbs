@@ -43,7 +43,7 @@ export function buildProductsGridHtml() {
         <h3 class="product-name">${p.nameHtml}</h3>
         <p class="product-desc">${p.desc}</p>
         <div class="product-actions">
-          <a class="btn-quote" data-spa-ignore="true">Request Quote</a>
+          <a class="btn-quote" data-spa-ignore="true" href="contactUs.html">Request Quote</a>
           <a href="safeherbs-products.html#${p.type === 'herb' ? 'herbs' : p.type === 'seed' ? 'seeds' : 'oniongarlic'}" target="_blank" 
    rel="noopener noreferrer" class="product-arrow">
   Explore →

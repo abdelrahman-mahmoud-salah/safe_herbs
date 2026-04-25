@@ -46,14 +46,14 @@ body {
 #cur {
   width: 8px;
   height: 8px;
-  background: var(--sage-dark);
+  background: rgba(200,160,82,.45);
   transition: width .2s, height .2s
 }
 
 #cur-ring {
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(61, 92, 61, .4);
+  border: 1px solid rgba(200,160,82,.45);
   transition: width .3s, height .3s
 }
 

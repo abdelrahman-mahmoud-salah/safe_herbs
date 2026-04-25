@@ -32,8 +32,8 @@ body {
   transform: translate(-50%, -50%);
   will-change: left, top;
 }
-#cur      { width: 8px;  height: 8px;  background: var(--sage-dark); transition: width .2s, height .2s; }
-#cur-ring { width: 36px; height: 36px; border: 1px solid rgba(61,92,61,.4); transition: width .3s, height .3s; }
+#cur      { width: 8px;  height: 8px;  background: rgba(200,160,82,.45); transition: width .2s, height .2s; }
+#cur-ring { width: 36px; height: 36px; border: 1px solid rgba(200,160,82,.45); transition: width .3s, height .3s; }
 
 /* ── NAV ── */
 nav {
