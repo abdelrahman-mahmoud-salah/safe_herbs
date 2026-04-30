@@ -45,25 +45,30 @@ document.querySelectorAll('.cat-tab').forEach(btn => {
    ACTIVE TAB ON SCROLL
 ───────────────────────────── */
 const sections = ['herbs', 'seeds', 'oniongarlic'];
+let isScrolling = false;
 
 window.addEventListener('scroll', () => {
-    let current = sections[0];
+    if (isScrolling) return;
+    isScrolling = true;
+    requestAnimationFrame(() => {
+        let current = sections[0];
 
-    sections.forEach(id => {
-        const el = document.getElementById(id);
-        if (!el) return;
+        sections.forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
 
-        const rect = el.getBoundingClientRect();
+            const rect = el.getBoundingClientRect();
 
-        if (rect.top <= 150) {
-            current = id;
-        }
+            if (rect.top <= 150) {
+                current = id;
+            }
+        });
+
+        document.querySelectorAll('.cat-tab').forEach(tab => {
+            tab.classList.toggle('active', tab.dataset.section === current);
+        });
+        isScrolling = false;
     });
-
-    document.querySelectorAll('.cat-tab').forEach(tab => {
-        tab.classList.toggle('active', tab.dataset.section === current);
-    });
-
 }, { passive: true });
 
 /* ─────────────────────────────
@@ -76,7 +81,11 @@ function setNavHeight() {
     }
 }
 setNavHeight();
-window.addEventListener('resize', setNavHeight);
+let navResizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(navResizeTimer);
+    navResizeTimer = setTimeout(setNavHeight, 100);
+});
 
 /* ─────────────────────────────
    PREVENT CANVAS BLOCKING CLICK

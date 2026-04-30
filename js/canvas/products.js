@@ -356,8 +356,8 @@ export function initProducts() {
       }
       frame++;
       syncCanvas(canvas);
-      const W = canvas.offsetWidth;
-      const H = canvas.offsetHeight;
+      const W = canvas._logicalWidth || canvas.width;
+      const H = canvas._logicalHeight || canvas.height;
       if (W < 2 || H < 2) {
         rafId = requestAnimationFrame(tick);
         return;

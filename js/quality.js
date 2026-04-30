@@ -77,7 +77,7 @@ const { syncCanvas, createVisibilityLoop } = PageUtils;
   function draw() {
     t += 0.006;
     syncCanvas(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     const progress = getScrollProgress();
     ctx.clearRect(0, 0, W, H);
 

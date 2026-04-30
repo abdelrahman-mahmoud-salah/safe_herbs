@@ -124,10 +124,16 @@ function initCursor() {
 function initNavScroll() {
   const $nav = document.getElementById('navbar');
   if (!$nav) return;
+  let isScrolling = false;
   window.addEventListener(
     'scroll',
     () => {
-      $nav.classList.toggle('scrolled', window.scrollY > 60);
+      if (isScrolling) return;
+      isScrolling = true;
+      requestAnimationFrame(() => {
+        $nav.classList.toggle('scrolled', window.scrollY > 60);
+        isScrolling = false;
+      });
     },
     { passive: true }
   );

@@ -1,4 +1,4 @@
-/* ── RESET ── */
+/* â”€â”€ RESET â”€â”€ */
 *,
 *::before,
 *::after {
@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-/* ── TOKENS ── */
+/* â”€â”€ TOKENS â”€â”€ */
 :root {
   --cream: #f5f0e8;
   --parchment: #ede5d0;
@@ -21,10 +21,10 @@
   --body: 'Jost', sans-serif;
 }
 
-/* ── BASE ── */
+/* â”€â”€ BASE â”€â”€ */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  
 }
 
 body {
@@ -32,10 +32,17 @@ body {
   color: var(--charcoal);
   font-family: var(--body);
   font-weight: 300;
-  cursor: none;
+  cursor: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
-/* ── CURSOR ── */
+@media (hover: none) and (pointer: coarse) {
+  body { cursor: auto; }
+  #cur, #cur-ring { display: none; }
+}
+
+/* â”€â”€ CURSOR â”€â”€ */
 #cur,
 #cur-ring {
   position: fixed;
@@ -60,7 +67,7 @@ body {
   transition: width .3s, height .3s;
 }
 
-/* ── NAV ── */
+/* â”€â”€ NAV â”€â”€ */
 nav {
   position: fixed;
   top: 0;
@@ -70,14 +77,14 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 52px;
+  padding: 22px clamp(16px, 5vw, 52px);
   transition: background .4s, padding .4s;
 }
 
 nav.scrolled {
   background: rgba(245, 240, 232, .93);
   backdrop-filter: blur(14px);
-  padding: 14px 52px;
+  padding: 14px clamp(16px, 5vw, 52px);
   border-bottom: 1px solid rgba(107, 140, 107, .15);
 }
 
@@ -88,6 +95,8 @@ nav.scrolled {
   letter-spacing: 3px;
   color: var(--charcoal);
   text-decoration: none;
+  margin-right: auto;
+  margin-left: 12px;
 }
 
 .nav-logo span {
@@ -96,7 +105,7 @@ nav.scrolled {
 
 .nav-links {
   display: flex;
-  gap: 36px;
+  gap: clamp(16px, 3vw, 36px);
   list-style: none;
 }
 
@@ -168,7 +177,7 @@ nav.scrolled {
   transition: transform .3s, opacity .3s;
 }
 
-/* ── MOBILE MENU ── */
+/* â”€â”€ MOBILE MENU â”€â”€ */
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -191,7 +200,7 @@ nav.scrolled {
 
 .mobile-menu a {
   font-family: var(--display);
-  font-size: 42px;
+  font-size: clamp(21px, 4.2vw, 42px);
   font-weight: 300;
   letter-spacing: 2px;
   color: var(--cream);
@@ -230,7 +239,7 @@ nav.scrolled {
   color: var(--gold);
 }
 
-/* ── PAGE HERO ── */
+/* â”€â”€ PAGE HERO â”€â”€ */
 .page-hero {
   height: 70vh;
   min-height: 480px;
@@ -257,7 +266,7 @@ nav.scrolled {
 .page-hero-content {
   position: relative;
   z-index: 2;
-  padding: 0 52px 72px;
+  padding: 0 clamp(16px, 5vw, 52px) 72px;
   max-width: 1000px;
 }
 
@@ -311,10 +320,10 @@ nav.scrolled {
   color: var(--gold-light);
 }
 
-/* ── OVERVIEW BAND ── */
+/* â”€â”€ OVERVIEW BAND â”€â”€ */
 .overview-band {
   background: var(--charcoal);
-  padding: 80px 52px;
+  padding: 80px clamp(16px, 5vw, 52px);
   position: relative;
   overflow: hidden;
 }
@@ -370,7 +379,7 @@ nav.scrolled {
   color: rgba(245, 240, 232, .92);
 }
 
-/* ── STATS ROW ── */
+/* â”€â”€ STATS ROW â”€â”€ */
 .stats-row {
   background: var(--parchment);
   border-top: 1px solid rgba(107, 140, 107, .15);
@@ -381,7 +390,7 @@ nav.scrolled {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
 }
 
 .stat-item {
@@ -403,7 +412,7 @@ nav.scrolled {
 
 .stat-num {
   font-family: var(--display);
-  font-size: 48px;
+  font-size: clamp(24px, 4.8vw, 48px);
   font-weight: 300;
   line-height: 1;
   color: var(--sage-dark);
@@ -422,9 +431,9 @@ nav.scrolled {
   margin-top: 8px;
 }
 
-/* ── MAP SECTION ── */
+/* â”€â”€ MAP SECTION â”€â”€ */
 .map-section {
-  padding: 120px 52px;
+  padding: 120px clamp(16px, 5vw, 52px);
   background: var(--cream);
   max-width: 1300px;
   margin: 0 auto;
@@ -469,7 +478,7 @@ nav.scrolled {
 
 .map-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
   gap: 60px;
   align-items: start;
 }
@@ -592,9 +601,9 @@ nav.scrolled {
   background: rgba(107, 140, 107, .05);
 }
 
-/* ── FARM CARDS ── */
+/* â”€â”€ FARM CARDS â”€â”€ */
 .farms-section {
-  padding: 0 52px 120px;
+  padding: 0 clamp(16px, 5vw, 52px) 120px;
   max-width: 1300px;
   margin: 0 auto;
 }
@@ -654,7 +663,7 @@ nav.scrolled {
   top: 24px;
   left: 24px;
   font-family: var(--display);
-  font-size: 72px;
+  font-size: clamp(36px, 7.2vw, 72px);
   font-weight: 300;
   line-height: 1;
   color: rgba(245, 240, 232, .08);
@@ -674,7 +683,7 @@ nav.scrolled {
 
 .farm-area-badge .area-num {
   font-family: var(--display);
-  font-size: 32px;
+  font-size: clamp(20px, 3.2vw, 32px);
   font-weight: 300;
   color: var(--gold);
   line-height: 1;
@@ -884,10 +893,10 @@ nav.scrolled {
   }
 }
 
-/* ── SOIL SECTION ── */
+/* â”€â”€ SOIL SECTION â”€â”€ */
 .soil-section {
   background: var(--charcoal);
-  padding: 120px 52px;
+  padding: 120px clamp(16px, 5vw, 52px);
   position: relative;
   overflow: hidden;
 }
@@ -906,7 +915,7 @@ nav.scrolled {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
   gap: 100px;
   align-items: center;
 }
@@ -1026,10 +1035,10 @@ nav.scrolled {
   display: block;
 }
 
-/* ── CTA BAND ── */
+/* â”€â”€ CTA BAND â”€â”€ */
 .cta-band {
   background: var(--sage-dark);
-  padding: 100px 52px;
+  padding: 100px clamp(16px, 5vw, 52px);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1116,10 +1125,10 @@ nav.scrolled {
   gap: 18px;
 }
 
-/* ── FOOTER ── */
+/* â”€â”€ FOOTER â”€â”€ */
 footer {
   background: var(--charcoal);
-  padding: 60px 52px 36px;
+  padding: 60px clamp(16px, 5vw, 52px) 36px;
   border-top: 1px solid rgba(245, 240, 232, .06);
 }
 
@@ -1127,13 +1136,13 @@ footer {
   max-width: 1200px;
   margin: 0 auto 60px;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 40px;
 }
 
 .footer-logo {
   font-family: var(--display);
-  font-size: 28px;
+  font-size: clamp(20px, 2.8vw, 28px);
   font-weight: 300;
   letter-spacing: 3px;
   color: var(--cream);
@@ -1181,13 +1190,15 @@ footer {
   border-top: 1px solid rgba(245, 240, 232, .06);
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
   font-size: 11px;
   font-weight: 300;
   color: rgba(245, 240, 232, .24);
   letter-spacing: 1px;
 }
 
-/* ── SCROLL REVEAL ── */
+/* â”€â”€ SCROLL REVEAL â”€â”€ */
 .reveal {
   opacity: 0;
   transform: translateY(32px);
@@ -1213,9 +1224,8 @@ footer {
   transform: none;
 }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 1000px) {
-
+/* â”€â”€ RESPONSIVE â”€â”€ */
+@media (max-width: 1100px) {
   .farm-block.layout-left,
   .farm-block.layout-right {
     grid-template-columns: 1fr;
@@ -1240,7 +1250,17 @@ footer {
 
   nav,
   nav.scrolled {
-    padding: 18px 24px;
+    padding: 18px 20px;
+  }
+
+  nav img {
+    width: clamp(56px, 11vw, 80px) !important;
+    flex-shrink: 0;
+  }
+
+  .nav-logo {
+    font-size: clamp(11px, 3vw, 16px);
+    letter-spacing: 1px;
   }
 
   .nav-links,
@@ -1253,7 +1273,7 @@ footer {
   }
 
   .page-hero-content {
-    padding: 0 24px 56px;
+    padding: 0 20px 52px;
   }
 
   .overview-inner {
@@ -1262,11 +1282,11 @@ footer {
   }
 
   .overview-band {
-    padding: 60px 24px;
+    padding: 60px clamp(16px, 5vw, 32px);
   }
 
   .stats-inner {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
   }
 
   .stat-item {
@@ -1274,7 +1294,7 @@ footer {
   }
 
   .map-section {
-    padding: 80px 24px;
+    padding: 72px clamp(16px, 5vw, 32px);
   }
 
   .map-layout {
@@ -1282,42 +1302,59 @@ footer {
   }
 
   .map-canvas-wrap {
-    height: 380px;
+    height: 320px;
   }
 
   .farms-section {
-    padding: 0 24px 80px;
+    padding: 0 clamp(16px, 5vw, 32px) 72px;
   }
 
   .farm-block {
-    margin-bottom: 70px;
-    padding-bottom: 70px;
+    margin-bottom: 60px;
+    padding-bottom: 60px;
   }
 
   .soil-section {
-    padding: 80px 24px;
+    padding: 72px clamp(16px, 5vw, 32px);
   }
 
   .cta-band {
-    padding: 80px 24px;
+    padding: 72px clamp(16px, 5vw, 32px);
   }
 
   footer {
-    padding: 60px 24px 36px;
+    padding: 60px clamp(16px, 5vw, 32px) 36px;
   }
 
   .footer-inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 600px) {
   .stats-inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .page-title {
+    font-size: clamp(42px, 13vw, 72px);
+  }
+
+  .farm-canvas-wrap {
+    aspect-ratio: 4/3;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-inner {
+    grid-template-columns: 1fr;
   }
 
   .footer-inner {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
+/* Nav logo SVG */
+.nav-logo-img { width: clamp(56px, 8vw, 88px); height: auto; flex-shrink: 0; display: block; }

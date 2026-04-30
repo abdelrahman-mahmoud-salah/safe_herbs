@@ -25,7 +25,7 @@ const { syncCanvas, createVisibilityLoop } = PageUtils;
 //   function draw() {
 //     t += 0.004;
 //     syncCanvas(canvas);
-//     const W = canvas.offsetWidth, H = canvas.offsetHeight;
+//     const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
 //     ctx.clearRect(0, 0, W, H);
 
 //     // Sky gradient
@@ -104,7 +104,7 @@ const { syncCanvas, createVisibilityLoop } = PageUtils;
   function draw() {
     t += 0.01;
     syncCanvas(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     ctx.clearRect(0, 0, W, H);
 
     // Background
@@ -222,7 +222,7 @@ FARM_PALETTE.forEach((pal, idx) => {
   function drawScene() {
     t += 0.007;
     syncCanvas(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     ctx.clearRect(0, 0, W, H);
 
     // Sky
@@ -401,7 +401,7 @@ FARM_PALETTE.forEach((pal, idx) => {
   function draw() {
     t += 0.006;
     syncCanvas(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     ctx.clearRect(0, 0, W, H);
 
     // Background

@@ -45,7 +45,7 @@ function trackDownload(name) {
   function draw() {
     t += 0.005;
     syncCanvas(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     ctx.clearRect(0, 0, W, H);
 
     // Radial dark background
@@ -129,7 +129,7 @@ function trackDownload(name) {
   function draw() {
     t += 0.007;
     syncCanvas(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     ctx.clearRect(0, 0, W, H);
 
     // Background

@@ -1,4 +1,4 @@
-*,
+﻿*,
 *::before,
 *::after {
   margin: 0;
@@ -21,7 +21,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden
+  
 }
 
 body {
@@ -29,8 +29,14 @@ body {
   color: var(--charcoal);
   font-family: var(--body);
   font-weight: 300;
-  cursor: none;
-  overflow-x: hidden
+  cursor: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@media (hover:none) and (pointer:coarse){
+  body{cursor:auto}
+  #cur,#cur-ring{display:none}
 }
 
 #cur,
@@ -67,14 +73,14 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 52px;
+  padding: 22px clamp(16px, 5vw, 52px);
   transition: background .4s, padding .4s
 }
 
 nav.scrolled {
   background: rgba(245, 240, 232, .93);
   backdrop-filter: blur(14px);
-  padding: 14px 52px;
+  padding: 14px clamp(16px, 5vw, 52px);
   border-bottom: 1px solid rgba(107, 140, 107, .15)
 }
 
@@ -93,7 +99,7 @@ nav.scrolled {
 
 .nav-links {
   display: flex;
-  gap: 36px;
+  gap: clamp(16px, 3vw, 36px);
   list-style: none
 }
 
@@ -184,7 +190,7 @@ nav.scrolled {
 
 .mobile-menu a {
   font-family: var(--display);
-  font-size: 42px;
+  font-size: clamp(21px, 4.2vw, 42px);
   font-weight: 300;
   letter-spacing: 2px;
   color: var(--cream);
@@ -251,7 +257,7 @@ nav.scrolled {
 .hero-content {
   position: relative;
   z-index: 2;
-  padding: 0 52px 68px;
+  padding: 0 clamp(16px, 5vw, 52px) 68px;
   max-width: 900px
 }
 
@@ -307,7 +313,7 @@ nav.scrolled {
 /* INTRO BAND */
 .intro-band {
   background: var(--charcoal);
-  padding: 80px 52px;
+  padding: 80px clamp(16px, 5vw, 52px);
   position: relative;
   overflow: hidden
 }
@@ -326,8 +332,8 @@ nav.scrolled {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 80px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(32px,6vw,80px);
   align-items: start
 }
 
@@ -368,11 +374,13 @@ nav.scrolled {
   background: var(--parchment);
   border-top: 1px solid rgba(107, 140, 107, .15);
   border-bottom: 1px solid rgba(107, 140, 107, .15);
-  display: flex
+  display: flex;
+  flex-wrap: wrap
 }
 
 .stat-cell {
-  flex: 1;
+  flex: 1 1 180px;
+  min-width: 160px;
   padding: 48px 36px;
   border-right: 1px solid rgba(107, 140, 107, .15);
   text-align: center;
@@ -392,7 +400,7 @@ nav.scrolled {
 
 .stat-num {
   font-family: var(--display);
-  font-size: 52px;
+  font-size: clamp(26px, 5.2vw, 52px);
   font-weight: 300;
   color: var(--sage-dark);
   line-height: 1
@@ -413,7 +421,7 @@ nav.scrolled {
 
 /* CERT GRID */
 .certs-section {
-  padding: 100px 52px;
+  padding: 100px clamp(16px, 5vw, 52px);
   max-width: 1300px;
   margin: 0 auto
 }
@@ -469,10 +477,10 @@ nav.scrolled {
   line-height: 1.7
 }
 
-/* ── CERT CARD ── */
+/* أ¢â€‌â‚¬أ¢â€‌â‚¬ CERT CARD أ¢â€‌â‚¬أ¢â€‌â‚¬ */
 .certs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 2px
 }
 
@@ -592,7 +600,7 @@ nav.scrolled {
 
 .cert-name {
   font-family: var(--display);
-  font-size: 26px;
+  font-size: clamp(20px, 2.6vw, 26px);
   font-weight: 300;
   color: var(--charcoal);
   line-height: 1.1;
@@ -727,7 +735,7 @@ nav.scrolled {
 /* PHILOSOPHY */
 .philosophy {
   background: var(--charcoal);
-  padding: 120px 52px;
+  padding: 120px clamp(16px, 5vw, 52px);
   position: relative;
   overflow: hidden
 }
@@ -746,7 +754,7 @@ nav.scrolled {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
   gap: 100px;
   align-items: center
 }
@@ -836,7 +844,7 @@ nav.scrolled {
 
 .pillar-num {
   font-family: var(--display);
-  font-size: 30px;
+  font-size: clamp(20px, 3vw, 30px);
   font-weight: 300;
   color: rgba(200, 160, 82, .35);
   line-height: 1;
@@ -863,7 +871,7 @@ nav.scrolled {
 /* CTA */
 .cta-band {
   background: var(--sage-dark);
-  padding: 100px 52px;
+  padding: 100px clamp(16px, 5vw, 52px);
   text-align: center;
   position: relative;
   overflow: hidden
@@ -953,7 +961,7 @@ nav.scrolled {
 /* FOOTER */
 footer {
   background: var(--charcoal);
-  padding: 60px 52px 36px;
+  padding: 60px clamp(16px, 5vw, 52px) 36px;
   border-top: 1px solid rgba(245, 240, 232, .06)
 }
 
@@ -961,13 +969,13 @@ footer {
   max-width: 1200px;
   margin: 0 auto 60px;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 60px
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 40px
 }
 
 .footer-logo {
   font-family: var(--display);
-  font-size: 28px;
+  font-size: clamp(20px, 2.8vw, 28px);
   font-weight: 300;
   letter-spacing: 3px;
   color: var(--cream);
@@ -1134,7 +1142,7 @@ footer {
   }
 
   .footer-inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
     gap: 40px
   }
 }
@@ -1148,3 +1156,7 @@ footer {
     grid-template-columns: 1fr
   }
 }
+/* Nav logo SVG */
+.nav-logo-img { width: clamp(56px, 8vw, 88px); height: auto; flex-shrink: 0; display: block; }
+
+@media (hover:none) and (pointer:coarse){body{cursor:auto}#cur,#cur-ring{display:none}}

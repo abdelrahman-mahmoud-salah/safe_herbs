@@ -86,7 +86,7 @@ const sync = PageUtils.syncCanvas;
   function draw() {
     t = (t + .003) % 1;
     sync(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     ctx.clearRect(0, 0, W, H);
 
     /* ── BACKGROUND ── */
@@ -238,7 +238,7 @@ const sync = PageUtils.syncCanvas;
   ];
   function draw() {
     t += .009; sync(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     ctx.clearRect(0, 0, W, H);
     const bg = ctx.createLinearGradient(0, 0, W, H);
     bg.addColorStop(0, '#2a3d22'); bg.addColorStop(1, '#1a2814');
@@ -311,7 +311,7 @@ HERB_DEFS.forEach((def, idx) => {
   function frame() {
     if (!active) { rafId = null; return; }
     t += .008; sync(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     if (W < 2 || H < 2) { rafId = requestAnimationFrame(frame); return; }
     ctx.clearRect(0, 0, W, H);
 
@@ -465,7 +465,7 @@ HERB_DEFS.forEach((def, idx) => {
 
   function draw() {
     t += .007; sync(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     ctx.clearRect(0, 0, W, H);
     const bg = ctx.createLinearGradient(0, 0, W, H);
     bg.addColorStop(0, '#22381a'); bg.addColorStop(1, '#121e0e');

@@ -49,7 +49,7 @@ function handleSubmit(e) {
   function draw() {
     t += 0.004;
     syncCanvas(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     ctx.clearRect(0, 0, W, H);
 
     particles.forEach(p => {
@@ -91,7 +91,7 @@ function handleSubmit(e) {
   function draw() {
     t += 0.006;
     syncCanvas(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     ctx.clearRect(0, 0, W, H);
 
     // Dark map background

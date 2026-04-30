@@ -12,8 +12,8 @@ export function initContact() {
   let H = 0;
 
   function init() {
-    W = canvas.offsetWidth;
-    H = canvas.offsetHeight;
+    W = canvas._logicalWidth || canvas.width;
+    H = canvas._logicalHeight || canvas.height;
     syncCanvas(canvas);
     pts = Array.from({ length: 26 }, () => ({
       x: Math.random() * W,
@@ -29,8 +29,8 @@ export function initContact() {
   const linkDist = 95;
 
   function draw() {
-    const nW = canvas.offsetWidth;
-    const nH = canvas.offsetHeight;
+    const nW = canvas._logicalWidth || canvas.width;
+    const nH = canvas._logicalHeight || canvas.height;
     if (nW !== W || nH !== H) init();
     ctx.clearRect(0, 0, W, H);
 

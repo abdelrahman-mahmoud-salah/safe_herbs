@@ -46,8 +46,8 @@ export function initHero() {
   function draw() {
     t += 0.0045;
     syncCanvas(canvas);
-    const W = canvas.offsetWidth;
-    const H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width;
+    const H = canvas._logicalHeight || canvas.height;
     ctx.clearRect(0, 0, W, H);
 
     const bg = ctx.createLinearGradient(0, 0, W * 0.5, H);

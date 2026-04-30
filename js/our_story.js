@@ -33,7 +33,7 @@ const { syncCanvas, createVisibilityLoop } = PageUtils;
   function draw() {
     t += 0.004;
     syncCanvas(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     ctx.clearRect(0, 0, W, H);
 
     particles.forEach(p => {
@@ -74,7 +74,7 @@ const { syncCanvas, createVisibilityLoop } = PageUtils;
   function draw() {
     t += 0.007;
     syncCanvas(canvas);
-    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const W = canvas._logicalWidth || canvas.width, H = canvas._logicalHeight || canvas.height;
     ctx.clearRect(0, 0, W, H);
 
     // Background
