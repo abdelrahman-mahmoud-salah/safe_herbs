@@ -10,11 +10,14 @@ export function initContact() {
   let pts = [];
   let W = 0;
   let H = 0;
+  let active = false;
+  let raf = 0;
 
   function init() {
+    syncCanvas(canvas);
     W = canvas._logicalWidth || canvas.width;
     H = canvas._logicalHeight || canvas.height;
-    syncCanvas(canvas);
+    if (W < 2 || H < 2) return;
     pts = Array.from({ length: 26 }, () => ({
       x: Math.random() * W,
       y: Math.random() * H,
@@ -25,20 +28,38 @@ export function initContact() {
     }));
   }
 
-  let raf = 0;
   const linkDist = 95;
 
   function draw() {
+    if (!active) { raf = 0; return; }
+    syncCanvas(canvas);
     const nW = canvas._logicalWidth || canvas.width;
     const nH = canvas._logicalHeight || canvas.height;
-    if (nW !== W || nH !== H) init();
+    
+    if (nW !== W || nH !== H) {
+      if (W > 0 && H > 0 && pts.length > 0) {
+        // scale existing points instead of resetting state
+        pts.forEach(p => {
+          p.x = p.x * (nW / W);
+          p.y = p.y * (nH / H);
+        });
+      } else {
+        init();
+      }
+      W = nW;
+      H = nH;
+    }
+    
+    if (W < 2 || H < 2) { raf = requestAnimationFrame(draw); return; }
     ctx.clearRect(0, 0, W, H);
 
     pts.forEach((p) => {
       p.x += p.vx;
       p.y += p.vy;
-      if (p.x < 0 || p.x > W) p.vx *= -1;
-      if (p.y < 0 || p.y > H) p.vy *= -1;
+      if (p.x < 0) { p.x = 0; p.vx *= -1; }
+      else if (p.x > W) { p.x = W; p.vx *= -1; }
+      if (p.y < 0) { p.y = 0; p.vy *= -1; }
+      else if (p.y > H) { p.y = H; p.vy *= -1; }
     });
 
     for (let i = 0; i < pts.length; i++) {
@@ -65,7 +86,23 @@ export function initContact() {
     raf = requestAnimationFrame(draw);
   }
 
-  init();
-  draw();
-  return () => cancelAnimationFrame(raf);
+  /* Pause when contact section is off-screen */
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        active = e.isIntersecting;
+        if (active && !raf) {
+          if (pts.length === 0) init();
+          draw();
+        }
+      });
+    },
+    { threshold: 0.05 }
+  );
+  io.observe(canvas);
+
+  return () => {
+    io.disconnect();
+    if (raf) cancelAnimationFrame(raf);
+  };
 }

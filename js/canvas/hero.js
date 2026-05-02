@@ -8,6 +8,9 @@ export function initHero() {
   if (!ctx) return;
 
   let t = 0;
+  let active = false;
+  let raf = 0;
+
   const LEAF_COLORS = ['#6b8c6b', '#8a9a5b', '#c8a052', '#3d5c3d', '#a0b870'];
   const count = 28;
   const particles = Array.from({ length: count }, () => ({
@@ -42,8 +45,8 @@ export function initHero() {
     ctx.restore();
   }
 
-  let raf = 0;
   function draw() {
+    if (!active) { raf = 0; return; }
     t += 0.0045;
     syncCanvas(canvas);
     const W = canvas._logicalWidth || canvas.width;
@@ -93,7 +96,20 @@ export function initHero() {
     raf = requestAnimationFrame(draw);
   }
 
-  draw();
+  /* Pause when hero section is off-screen to save CPU/GPU */
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        active = e.isIntersecting;
+        if (active && !raf) draw();
+      });
+    },
+    { threshold: 0.05 }
+  );
+  io.observe(canvas);
 
-  return () => cancelAnimationFrame(raf);
+  return () => {
+    io.disconnect();
+    if (raf) cancelAnimationFrame(raf);
+  };
 }

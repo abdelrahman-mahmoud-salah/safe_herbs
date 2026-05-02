@@ -64,6 +64,7 @@
 
   <link rel="preload" href="css/farms.css" as="style">
   <link rel="stylesheet" href="css/farms.css">
+  <link rel="preload" href="css/mobile-meneu.css" as="style">
 </head>
 
 <body>
@@ -72,32 +73,14 @@
   <div id="cur"></div>
   <div id="cur-ring"></div>
 
-  <!-- MOBILE MENU (injected via mobileMenu.js) -->
-  <div id="mobile-menu-container"></div>
 
   <!-- NAV -->
-  <nav id="navbar">
-    <img class="nav-logo" src="image/safeherbs_realistic_petals.svg" alt="Logo" style="width: 100px; ">
-    <a href="index.html" class="nav-logo">SAFE HERBS <span>&amp; SPICES</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#products">Products</a></li>
-      <li><a href="farms.html" class="active">Farms</a></li>
-      <li><a href="certificates.html">Certificates</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-      <li><a href="societal.html">Societal Life</a></li>
-    </ul>
-    <a href="index.html#contact" class="nav-cta-link">Get In Touch</a>
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
+  <div id="header-container"></div>
 
   <!-- PAGE HERO -->
   <section class="page-hero">
-    <canvas id="hero-canvas"></canvas>
-    <div class="hero-overlay"></div>
+
+
     <div class="page-hero-content">
       <div class="breadcrumb">
         <a href="index.html">Home</a>
@@ -162,7 +145,7 @@
         <canvas id="map-canvas"></canvas>
       </div>
       <div class="map-legend reveal-right">
-        <div class="legend-item">
+        <!-- <div class="legend-item">
           <div class="legend-dot-wrap">
             <div class="legend-dot dot-gold"></div>
           </div>
@@ -172,7 +155,7 @@
             <div class="legend-tags"><span class="tag">195 ha</span><span class="tag">Organic since 2005</span><span
                 class="tag">NOP</span><span class="tag">Fairtrade</span></div>
           </div>
-        </div>
+        </div> -->
         <div class="legend-item">
           <div class="legend-dot-wrap">
             <div class="legend-dot dot-sage"></div>
@@ -458,7 +441,9 @@
     <div class="farm-block layout-left reveal">
       <div class="farm-visual">
         <div class="farm-canvas-wrap">
-          <canvas id="farm-canvas-5"></canvas>
+          <img class="farm-img" src="image/luxour.webp" alt="Assuit Nile floodplain farm" loading="lazy"
+            decoding="async">
+
           <div class="farm-num-badge">05</div>
           <div class="farm-area-badge">
             <div class="area-num">60</div>
@@ -631,8 +616,8 @@
   <!-- FOOTER (injected by footer.js) -->
   <div id="footer-container"></div>
 
+  <script type="module" src="js/header.js" defer></script>
   <script type="module" src="js/pageUtils.js" defer></script>
-  <script type="module" src="js/mobileMenu.js" defer></script>
   <script type="module" src="js/farms.js" defer></script>
   <script type="module" src="js/footer.js" defer></script>
 </body>

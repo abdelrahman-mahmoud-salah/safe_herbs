@@ -523,20 +523,48 @@
   /* ═══════════════════════════════════════
      PUBLIC API
   ═══════════════════════════════════════ */
+  var isMobile = function () { return window.innerWidth < 540; };
+
   window.SHChat = {
     toggle: function () { isOpen ? this.close() : this.open(); },
     open: function () {
       isOpen = true;
       $f.classList.add('open'); $p.classList.add('open'); $bd.classList.add('open');
-      $i.focus();
+      /* Don't auto-focus on mobile — prevents unwanted keyboard popup */
+      if (!isMobile()) $i.focus();
       if (!turns && $m.children.length === 0) greet();
       scrollBottom();
+      /* Prevent body scroll on mobile when chat is open */
+      if (isMobile()) document.body.style.overflow = 'hidden';
     },
     close: function () {
       isOpen = false;
       $f.classList.remove('open'); $p.classList.remove('open'); $bd.classList.remove('open');
+      $i.blur();
+      document.body.style.overflow = '';
     }
   };
+
+  /* ═══════════════════════════════════════
+     VISUAL VIEWPORT — iOS keyboard fix
+  ═══════════════════════════════════════ */
+  if (window.visualViewport) {
+    var lastVH = 0;
+    window.visualViewport.addEventListener('resize', function () {
+      if (!isOpen || !isMobile()) return;
+      var vh = window.visualViewport.height;
+      /* Keyboard is likely open when viewport shrinks significantly */
+      if (vh < window.innerHeight * 0.75) {
+        $p.style.height = vh + 'px';
+        $p.style.bottom = (window.innerHeight - vh - window.visualViewport.offsetTop) + 'px';
+      } else {
+        $p.style.height = '';
+        $p.style.bottom = '';
+      }
+      lastVH = vh;
+      scrollBottom();
+    });
+  }
 
   /* ═══════════════════════════════════════
      EVENTS
@@ -547,6 +575,12 @@
   if (cb) cb.addEventListener('click', function () { window.SHChat.close(); });
   $i.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); processInput($i.value); } });
   $s.addEventListener('click', function () { processInput($i.value); });
+
+  /* Handle orientation changes */
+  window.addEventListener('orientationchange', function () {
+    if (!isOpen) return;
+    setTimeout(function () { $p.style.height = ''; $p.style.bottom = ''; scrollBottom(); }, 300);
+  });
 
   /* drag-to-dismiss on mobile */
   var hnd = document.querySelector('.sh-handle');

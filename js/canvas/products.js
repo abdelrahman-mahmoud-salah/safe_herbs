@@ -333,6 +333,17 @@ export function initProducts() {
     ]
   };
 
+  // ─── is the canvas actually visible in the viewport? ──────────────────────
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.width > 0 &&
+      rect.height > 0 &&
+      rect.top < window.innerHeight &&
+      rect.bottom > 0
+    );
+  }
+
   const cleanups = [];
 
   CARDS.forEach((card) => {
@@ -346,18 +357,21 @@ export function initProducts() {
     const dots = dotsRoot.querySelectorAll('.sdot');
 
     let frame = Math.floor(card.startFrame);
-    let active = false;
     let rafId = null;
+    let destroyed = false;
 
+    // ── core render loop ────────────────────────────────────────────────────
     function tick() {
-      if (!active) {
+      if (destroyed || document.hidden || !isInViewport(canvas)) {
         rafId = null;
         return;
       }
+
       frame++;
       syncCanvas(canvas);
       const W = canvas._logicalWidth || canvas.width;
       const H = canvas._logicalHeight || canvas.height;
+
       if (W < 2 || H < 2) {
         rafId = requestAnimationFrame(tick);
         return;
@@ -392,19 +406,65 @@ export function initProducts() {
       rafId = requestAnimationFrame(tick);
     }
 
+    // ── tryStart: آمن يتنادى في أي وقت ────────────────────────────────────
+    function tryStart() {
+      if (!destroyed && !document.hidden && isInViewport(canvas) && !rafId) {
+        tick();
+      }
+    }
+
+    // ── IntersectionObserver: للـ scroll العادي ─────────────────────────────
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          active = e.isIntersecting;
-          if (active && !rafId) tick();
+          if (e.isIntersecting) tryStart();
         });
       },
       { threshold: 0.05 }
     );
     io.observe(canvas);
+
+    // ── visibilitychange: tab switch وdesktop navigation ────────────────────
+    function onVisibilityChange() {
+      if (!document.hidden) {
+        requestAnimationFrame(tryStart);
+      }
+    }
+    document.addEventListener('visibilitychange', onVisibilityChange);
+
+    // ── pageshow: bfcache (زرار back في المتصفح) ───────────────────────────
+    function onPageShow(e) {
+      if (e.persisted) {
+        requestAnimationFrame(tryStart);
+      }
+    }
+    window.addEventListener('pageshow', onPageShow);
+
+    // ── window focus: الحل الأساسي للموبايل ────────────────────────────────
+    // على الموبايل (Chrome/Safari)، المتصفح بيعمل JS suspension لما تتنقل
+    // بين الصفحات. لا visibilitychange ولا pageshow بيـfire بشكل موثوق.
+    // window 'focus' هو الـ event الوحيد اللي بيـfire دايماً لما الصفحة
+    // ترجع active على الموبايل — سواء من header navigation أو back button.
+    function onFocus() {
+      // استنى frame عشان المتصفح يخلص resume الـ JS engine
+      requestAnimationFrame(() => requestAnimationFrame(tryStart));
+    }
+    window.addEventListener('focus', onFocus);
+
+    // ── ابدأ فوراً لو الـ canvas موجود وvisible من أول load ────────────────
+    tryStart();
+
+    // ── cleanup ─────────────────────────────────────────────────────────────
     cleanups.push(() => {
+      destroyed = true;
       io.disconnect();
-      if (rafId) cancelAnimationFrame(rafId);
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      window.removeEventListener('pageshow', onPageShow);
+      window.removeEventListener('focus', onFocus);
     });
   });
 

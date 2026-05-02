@@ -120,24 +120,6 @@ function initCursor() {
   });
 }
 
-/* ── Nav scroll state ── */
-function initNavScroll() {
-  const $nav = document.getElementById('navbar');
-  if (!$nav) return;
-  let isScrolling = false;
-  window.addEventListener(
-    'scroll',
-    () => {
-      if (isScrolling) return;
-      isScrolling = true;
-      requestAnimationFrame(() => {
-        $nav.classList.toggle('scrolled', window.scrollY > 60);
-        isScrolling = false;
-      });
-    },
-    { passive: true }
-  );
-}
 
 /* ── Mobile menu ── */
 let menuOpen = false;
@@ -328,7 +310,6 @@ function prefetchChunks() {
 function boot() {
   document.documentElement.classList.toggle('no-effects', !allowHeavyEffects());
   initCursor();
-  initNavScroll();
   initRouter();
   initReveal();
   scheduleHeroCanvas();

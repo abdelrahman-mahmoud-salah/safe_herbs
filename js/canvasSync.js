@@ -1,9 +1,13 @@
 /**
  * Syncs canvas backing store to CSS size using ResizeObserver to prevent layout thrashing.
+ * Handles devicePixelRatio changes (e.g., moving between monitors).
  */
-const dpr = typeof window !== 'undefined' ? (window.devicePixelRatio || 1) : 1;
+function getDpr() {
+  return typeof window !== 'undefined' ? (window.devicePixelRatio || 1) : 1;
+}
 
 const resizeObserver = typeof ResizeObserver !== 'undefined' ? new ResizeObserver((entries) => {
+  const dpr = getDpr();
   for (let entry of entries) {
     const canvas = entry.target;
     let width, height;
@@ -27,6 +31,8 @@ const resizeObserver = typeof ResizeObserver !== 'undefined' ? new ResizeObserve
  * @returns {boolean} true if dimensions changed
  */
 export function syncCanvas(canvas) {
+  const dpr = getDpr();
+
   if (!canvas._isObserved && resizeObserver) {
     resizeObserver.observe(canvas);
     canvas._isObserved = true;
